@@ -1,0 +1,150 @@
+/* ---------- Estilos generales ---------- */
+/* Elimina los márgenes predeterminados del body para un diseño limpio */
+body {
+  margin: 0;
+}
+
+/* Fondo secundario utilizado en áreas específicas */
+.bg-secondary {
+  background-color: #f8f9fa;
+}
+
+/* ---------- Contenedor principal ---------- */
+/* Define un ancho máximo, margen automático para centrar y ancho responsivo */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* ---------- Encabezado ---------- */
+/* Diseña el contenedor del encabezado con flexbox */
+.header {
+  display: flex; /* Diseño de caja flexible */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espaciado entre elementos */
+  padding: 20px 0; /* Espaciado interno vertical */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas si es necesario */
+}
+
+/* ---------- Logo ---------- */
+/* Estilo para el enlace del logo */
+.logo-link {
+  font-weight: bold; /* Texto en negrita */
+  font-size: 24px; /* Tamaño de fuente grande */
+  text-decoration: none; /* Sin subrayado */
+  color: #333; /* Color oscuro del texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* ---------- Navegación ---------- */
+/* Contenedor de la lista de navegación */
+.navigation .nav-list {
+  list-style: none; /* Elimina viñetas */
+  display: flex; /* Diseño flexible en línea */
+  gap: 20px; /* Espaciado entre elementos */
+  padding: 0; /* Sin relleno interno */
+  margin: 0; /* Sin márgenes externos */
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-link {
+  text-decoration: none; /* Sin subrayado */
+  color: #555; /* Color gris para texto */
+  font-size: 16px; /* Tamaño de fuente moderado */
+}
+
+/* Efecto hover para los enlaces de navegación */
+.nav-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+/* ---------- Botones de autenticación ---------- */
+/* Contenedor para los botones de autenticación */
+.auth-buttons {
+  display: flex; /* Diseño flexible en línea */
+  gap: 10px; /* Espaciado entre botones */
+}
+
+/* Botón de login con borde y fondo transparente */
+.btn-outline-login {
+  border: 1px solid #007bff; /* Borde azul */
+  background-color: transparent; /* Fondo transparente */
+  color: #007bff; /* Texto azul */
+  padding: 8px 16px; /* Espaciado interno */
+  cursor: pointer; /* Indica que es interactivo */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Efecto hover para el botón de login */
+.btn-outline-login:hover {
+  background-color: #007bff; /* Fondo azul sólido */
+  color: #fff; /* Texto blanco */
+}
+
+/* Botón principal de signup con fondo sólido */
+.btn-primary-singup {
+  background-color: #0056b3; /* Fondo azul oscuro */
+  color: #ffffff; /* Texto blanco */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  padding: 8px 16px; /* Espaciado interno */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Indica interactividad */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Efecto hover para el botón de signup */
+.btn-primary-singup:hover {
+  background-color: #004494; /* Azul más oscuro */
+}
+
+
+/* ---------- Media Query ---------- */
+
+/* Estilos para pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  /* Reorganiza el encabezado en columnas */
+  .header {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+  }
+
+  /* Ajusta la lista de navegación para pantallas pequeñas */
+  .navigation .nav-list {
+    display: flex; /* Diseño flexible */
+    justify-content: center; /* Centra los elementos */
+    flex-wrap: wrap; /* Permite ajuste en múltiples líneas */
+    margin-top: 10px; /* Espaciado superior */
+    gap: 10px; /* Espaciado entre elementos */
+  }
+
+  /* Reorganiza los botones de autenticación */
+  .auth-buttons {
+    display: flex; /* Diseño flexible */
+    flex-wrap: wrap; /* Permite múltiples líneas */
+    gap: 10px; /* Espaciado entre botones */
+    margin-top: 20px; /* Espaciado superior */
+  }
+}
+
+/* Estilos para pantallas pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+  /* Ajusta el tamaño del logo */
+  .logo-link {
+    font-size: 20px; /* Tamaño de fuente más pequeño */
+    margin-bottom: 10px; /* Menor espaciado inferior */
+  }
+
+  /* Reduce el tamaño de fuente de los enlaces */
+  .nav-link {
+    font-size: 14px; /* Tamaño de fuente reducido */
+  }
+
+  /* Ajusta el tamaño de los botones */
+  .btn-outline-login,
+  .btn-primary-singup {
+    padding: 6px 12px; /* Reducción de espaciado interno */
+    font-size: 14px; /* Tamaño de fuente reducido */
+  }
+}

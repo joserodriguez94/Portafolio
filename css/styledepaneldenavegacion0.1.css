@@ -1,0 +1,106 @@
+/* Estilos generales */
+
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+  box-sizing: border-box; /* Incluye bordes y rellenos en el tamaño total */
+}
+
+/* Barra de navegación principal */
+.navbar {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  height: 60px; /* Altura fija de la barra */
+  display: flex; /* Uso de flexbox para alinear elementos */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Contenedor de los elementos de la barra de navegación */
+.navbar-container {
+  display: flex; /* Distribuye los elementos en línea */
+  justify-content: space-between; /* Espacio máximo entre elementos */
+  align-items: center; /* Alineación vertical centrada */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Ancho máximo para limitar el contenido */
+  padding: 0 20px; /* Relleno interno lateral */
+}
+
+/* Logo dentro de la barra de navegación */
+.navbar-logo {
+  font-size: 24px; /* Tamaño grande para destacar */
+  font-weight: bold; /* Negrita para resaltar el logo */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu {
+  display: flex; /* Distribuye elementos en línea */
+  list-style: none; /* Elimina el estilo de lista predeterminado */
+  padding: 5px; /* Espaciado interno ligero */
+}
+
+/* Elementos individuales dentro del menú */
+.nav-item {
+  margin-left: 20px; /* Espaciado entre los elementos del menú */
+}
+
+/* Enlaces dentro del menú */
+.nav-link {
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 18px; /* Tamaño del texto */
+  transition: color 0.3s ease; /* Animación para el cambio de color */
+}
+
+/* Efecto al pasar el cursor sobre los enlaces */
+.nav-link:hover {
+  color: #ffdd57; /* Cambio de color a un amarillo claro */
+}
+
+/* Icono del menú hamburguesa (oculto en pantallas grandes) */
+.menu-icon {
+  display: none; /* Ocultarlo por defecto */
+  font-size: 30px; /* Tamaño grande del ícono */
+  color: white; /* Color blanco */
+  cursor: pointer; /* Indicador de clic */
+}
+
+/* Clases adicionales para centrado */
+.align-center {
+  display: flex; /* Uso de flexbox */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+/* ---------- Media Query ---------- */
+
+/* Estilos para pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  /* Icono de menú hamburguesa visible en pantallas pequeñas */
+  .menu-icon {
+    display: block; /* Se muestra el ícono */
+  }
+
+  /* Menú de navegación en pantallas pequeñas */
+  .nav-menu {
+    display: none; /* Ocultarlo por defecto */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #333; /* Fondo oscuro */
+    position: absolute; /* Posición fija debajo de la barra */
+    top: 60px; /* Debajo de la barra de navegación */
+    left: 0; /* Alineación a la izquierda */
+    text-align: center; /* Centrado del texto */
+  }
+
+  /* Menú activo (visible) */
+  .nav-menu.active {
+    display: flex; /* Muestra el menú al activarlo */
+  }
+
+  /* Elementos del menú en pantallas pequeñas */
+  .nav-item {
+    margin: 10px 0; /* Espaciado vertical entre elementos */
+  }
+}

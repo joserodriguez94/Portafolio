@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Enlaces a hojas de estilo -->
+  <link rel="stylesheet" href="css/styledepaginahome.css" />
+  <link rel="stylesheet" href="css/stylepagecomplete3.3.css" />
+
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet CSS para mapas -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+  <!-- DataTables CSS para tablas -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  <!-- Título de la página -->
+  <title>Portfolio Jose</title>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <div class="">
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid mt-2 mb-2">
+        <a class="navbar-brand fw-bold" href="#">Portfolio José </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <div class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a href="#" class="text-decoration-none">
+                <img class="" width="40px" src="iconos/PJ_logo.svg" alt="" />
+              </a>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="pagecomplete3.html">API 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pagecomplete3.2.html">API 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="pagecomplete3.3.html">API 3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br />
+  <br />
+
+  <!-- Sección principal de la aplicación -->
+  <div class="hero-section">
+    <div class="">
+      <br />
+      <br />
+
+      <!-- Botón para abrir la documentación del API -->
+      <div class="justify-content-end d-flex mt-5">
+        <div class="justify-content-center d-flex">
+          <div class="px-3">
+            <h5 class="text-center text-swhite">☀️API⛅</h5>
+            <button class="btn btn-warning mt-2 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              View API documentation / Ver documentación del API
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Título de la aplicación -->
+      <div class="mt-5">
+        <h1 class="text-center fw-bold text-warning">Weather Application</h1>
+
+        <!-- Sección de búsqueda -->
+        <div class="d-lg-flex justify-content-lg-center px-3">
+          <div class="search-container">
+            <input type="text" id="city-input" class="form-control" placeholder="Enter city" />
+            <button id="search-btn" class="btn-search">Search</button>
+
+            <select id="unit-select" class="form-control unit-select-class">
+              <option value="metric">°C</option>
+              <option value="imperial">°F</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Spinner de carga -->
+        <div id="loading-spinner" class="hidden text-center">Loading...</div>
+
+        <!-- Resultados del clima -->
+        <div class="weather-result hidden text-center">
+          <h2 id="city-name"></h2>
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p id="conditions"></p>
+          <p id="wind-speed"></p>
+          <p id="pressure"></p>
+          <p id="alerts"></p>
+          <img id="weather-icon" src="" alt="Weather icon" />
+        </div>
+
+        <!-- Pronóstico del tiempo -->
+        <div id="forecast-container" class="hidden">
+          <div class="px-3">
+            <h3 class="text-center">5-Day Forecast</h3>
+            <div id="forecast" class="d-flex justify-content-center flex-wrap"></div>
+          </div>
+        </div>
+
+        <!-- Sección del gráfico de temperatura -->
+        <div class="chart-container">
+          <div class="px-4">
+            <canvas id="temperature-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Sección del mapa -->
+        <div class="px-3">
+          <div id="map" class=""></div>
+        </div>
+
+        <!-- Historial de búsquedas -->
+        <div id="history-container" class="history-container mt-4">
+          <h4 class="px-3">Search History</h4>
+          <div id="history-list" class="fw-bold px-3 history-list-class"></div>
+        </div>
+
+        <!-- Mensaje de error -->
+        <div id="error-message" class="hidden text-center text-danger"></div>
+
+        <!-- Sección de comentarios de usuarios -->
+        <div class="mt-4">
+          <section class="px-3">
+            <h2>User Comments:</h2>
+            <form id="comment-form">
+              <div class="mb-3">
+                <label for="user-comment" class="form-label">Leave your comment :</label>
+                <textarea id="user-comment" class="form-control" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn-coment">Submit</button>
+            </form>
+            <div id="comments-list" class="mt-3">
+              <h5>Recent Comments:</h5>
+              <ul id="comment-items" class="list-group"></ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <br /><br />
+    </div>
+
+    <!-- Modal de documentación del API -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- Encabezado del modal -->
+          <div class="modal-header bg-warning">
+            <h5 class="text-white px-3" id="exampleModalLabel">
+              API documentation / Documentación del API
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Cuerpo del modal -->
+          <div>
+            <div class="modal-body">
+              <div class="row">
+                <!-- Resumen general del API en español -->
+                <div class="">
+                  <div class="container my-5">
+                    <div class="card shadow-lg">
+                      <div class="bg-warning text-white text-center">
+                        <h2>Resumen General del API</h2>
+                        <h5 class="fw-light text-white">
+                          <em> Versión español </em>
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="lead">
+                          Este código es una aplicación web completa que permite a los usuarios buscar información meteorológica de una ciudad, ver un pronóstico del tiempo, visualizar un gráfico de temperatura, y mantener un historial de búsquedas. Además, incluye una sección de comentarios donde los usuarios pueden dejar y ver comentarios almacenados en el localStorage. La aplicación utiliza varias bibliotecas externas como Leaflet para el mapa y Chart.js para el gráfico de temperatura.
+                        </p>
+                      </div>
+                      <div class="card-footer text-center">
+                        <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Resumen general del API en inglés -->
+                  <div class="container my-5">
+                    <div class="card shadow-lg">
+                      <div class="bg-warning text-white text-center">
+                        <h2>API General Summary</h2>
+                        <h5 class="fw-light text-white">
+                          <em> English version </em>
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="lead">
+                          This code is a complete web application that allows users to search for weather information for a city, view a weather forecast, display a temperature graph, and maintain a search history. In addition, it includes a comments section where users can leave and view comments stored in the localStorage. The application uses several external libraries such as Leaflet for the map and Chart.js for the temperature graph.
+                        </p>
+                      </div>
+                      <div class="card-footer text-center">
+                        <small class="text-muted">Developed with ❤️ by Jose</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Primera División: Explicación en español -->
+                <div class="col-md-6 mt-5">
+                  <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                    <em> Versión español</em>
+                  </div>
+
+                  <div class="mt-3">
+                    <div class="mb-4">
+                      <div class="card shadow-lg">
+                        <div class="bg-warning text-white text-center p-2">
+                          <h2>
+                            Cumplimiento de estándares de JavaScript (ECMAScript (ES) 6)
+                          </h2>
+                        </div>
+                        <div class="container" id="explanation">
+                          <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                <strong>Uso de Constantes y Variables Let:</strong>
+                                El código utiliza <code>const</code> y <code>let</code> para declarar variables y constantes de manera apropiada, asegurando un ámbito seguro y evitando problemas con variables globales. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>const apiKey = "eb4ae362308a4644aad02563c3c6cc4c";
+                  let map;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Funciones Flecha:</strong>
+                                Se implementan funciones flecha, como en la declaración de eventos y funciones asíncronas, lo que reduce la verbosidad y asegura un manejo de contexto correcto. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>searchBtn.addEventListener("click", async () => {
+                    // Código aquí
+                  });</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Plantillas de Cadena:</strong>
+                                Uso extensivo de <code>template literals</code> para construir dinámicamente el contenido HTML y las cadenas de texto. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("city-name").textContent = `${data.name}, ${data.sys.country}`;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Selección y manipulación del DOM:</strong>
+                                Se seleccionan elementos del DOM con métodos estándar como <code>getElementById</code>, <code>querySelector</code>, y <code>innerHTML</code>. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>const cityInput = document.getElementById("city-input");</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Desestructuración:</strong>
+                                Se aplica destructuración para manejar datos complejos, como al acceder a las propiedades de objetos anidados. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>const { lat, lon } = weatherData.coord;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Manejo de Promesas:</strong>
+                                Uso correcto de <code>async/await</code> para manejar promesas en operaciones asíncronas como <code>fetch</code>, asegurando un flujo de trabajo más limpio. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>async function fetchWeather(city, unit) {
+                    const response = await fetch(`${apiBase}/weather?q=${city}&units=${unit}&appid=${apiKey}`);
+                    if (!response.ok) throw new Error("City not found");
+                    return response.json();
+                  }</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Métodos de Array Avanzados:</strong>
+                                Métodos como <code>map</code>, <code>filter</code>, y <code>forEach</code> se utilizan para manejar colecciones de datos eficientemente. Por ejemplo:
+                                <pre class="bg-light p-3 border rounded"><code>const forecastHTML = data.list
+                    .filter((_, index) => index % 8 === 0)
+                    .map((entry) => {
+                      return `&lt;div class="forecast-item"&gt;...&lt;/div&gt;`;
+                    })
+                    .join("");</code></pre>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Explicación detallada del código JS en español -->
+                    <div class="">
+                      <div class="card shadow-lg">
+                        <div class="bg-warning text-white text-center p-2">
+                          <h2>Explicación detallada del código JS (API)</h2>
+                        </div>
+                        <div class="" id="explanation">
+                          <div class="">
+                            <div class="card shadow-lg">
+                              <div class="card-body">
+                                <h2 class="text-primary">1. Configuración Inicial</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>const apiKey = "eb4ae362308a4644aad02563c3c6cc4c";</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Define la clave de la API de OpenWeatherMap, que se utilizará para autenticar las solicitudes a la API.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>const apiBase = "https://api.openweathermap.org/data/2.5";</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Establece la URL base de la API de OpenWeatherMap, que se utilizará para realizar las solicitudes.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>let map;</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Declara una variable global para almacenar la instancia del mapa de Leaflet.
+                                </p>
+
+                                <h2 class="text-primary">2. Función para Obtener Datos (<code>fetchWeather</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>async function fetchWeather(city, unit) {</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Declara una función asíncrona que se encarga de obtener los datos del clima para una ciudad específica.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>const response = await fetch(`${apiBase}/weather?q=${city}&units=${unit}&appid=${apiKey}`);</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Realiza una solicitud HTTP GET a la API de OpenWeatherMap para obtener los datos del clima.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>if (!response.ok) throw new Error("City not found");</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Verifica si la solicitud fue exitosa. Si no, lanza un error con un mensaje personalizado.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>return response.json();</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Convierte la respuesta de la API en un objeto JSON y lo devuelve.
+                                </p>
+
+                                <h2 class="text-primary">3. Función para Actualizar la Interfaz (<code>updateWeatherUI</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>function updateWeatherUI(data) {</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Actualiza la interfaz de usuario con los datos del clima obtenidos de la API.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("city-name").textContent = `${data.name}, ${data.sys.country}`;</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Muestra el nombre de la ciudad y el país en la interfaz.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("temperature").textContent = `🌡️ Temp: ${data.main.temp} °${unitSelect.value === "metric" ? "C" : "F"}`;</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Muestra la temperatura en la interfaz, utilizando la unidad seleccionada (Celsius o Fahrenheit).
+                                </p>
+
+                                <h2 class="text-primary">4. Función para Actualizar el Mapa (<code>updateMap</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>function updateMap(lat, lon, cityName) {</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Actualiza la posición del mapa y el marcador para reflejar la ubicación de la ciudad buscada.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>map.setView([lat, lon], 10);</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Centra el mapa en las coordenadas de la ciudad y ajusta el nivel de zoom.
+                                </p>
+
+                                <h2 class="text-primary">5. Manejo de Eventos</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>searchBtn.addEventListener("click", async () => { ... });</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Maneja el evento de clic en el botón de búsqueda, iniciando el proceso de obtención de datos y actualización de la interfaz.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>cityInput.addEventListener("keydown", (event) => { ... });</code></pre>
+                                <p>
+                                  <strong>¿Qué hace?</strong> Maneja el evento de presionar Enter en el campo de entrada de la ciudad, simulando un clic en el botón de búsqueda.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer text-center">
+                          <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Segunda División: Explicación en inglés -->
+                <div class="col-md-6 mt-5">
+                  <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                    <em> English version</em>
+                  </div>
+
+                  <div class="mt-3">
+                    <div class="mb-4">
+                      <div class="card shadow-lg">
+                        <div class="bg-warning text-white text-center p-2">
+                          <h2>
+                            Compliance with JavaScript Standards (ECMAScript (ES) 6)
+                          </h2>
+                        </div>
+                        <div class="container" id="explanation">
+                          <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                <strong>Use of Constants and Let Variables:</strong>
+                                The code uses <code>const</code> and <code>let</code> to declare variables and constants appropriately, ensuring safe scope and avoiding issues with global variables. For example:
+                                <pre class="bg-light p-3 border rounded"><code>const apiKey = "eb4ae362308a4644aad02563c3c6cc4c";
+                  let map;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Arrow Functions:</strong>
+                                Arrow functions are implemented, such as in event declarations and asynchronous functions, reducing verbosity and ensuring correct context handling. For example:
+                                <pre class="bg-light p-3 border rounded"><code>searchBtn.addEventListener("click", async () => {
+                    // Code here
+                  });</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Template Literals:</strong>
+                                Extensive use of <code>template literals</code> to dynamically build HTML content and strings. For example:
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("city-name").textContent = `${data.name}, ${data.sys.country}`;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>DOM Selection and Manipulation:</strong>
+                                DOM elements are selected using standard methods like <code>getElementById</code>, <code>querySelector</code>, and <code>innerHTML</code>. For example:
+                                <pre class="bg-light p-3 border rounded"><code>const cityInput = document.getElementById("city-input");</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Destructuring:</strong>
+                                Destructuring is applied to handle complex data, such as accessing properties of nested objects. For example:
+                                <pre class="bg-light p-3 border rounded"><code>const { lat, lon } = weatherData.coord;</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Promise Handling:</strong>
+                                Correct use of <code>async/await</code> to handle promises in asynchronous operations like <code>fetch</code>, ensuring cleaner workflow. For example:
+                                <pre class="bg-light p-3 border rounded"><code>async function fetchWeather(city, unit) {
+                    const response = await fetch(`${apiBase}/weather?q=${city}&units=${unit}&appid=${apiKey}`);
+                    if (!response.ok) throw new Error("City not found");
+                    return response.json();
+                  }</code></pre>
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Advanced Array Methods:</strong>
+                                Methods like <code>map</code>, <code>filter</code>, and <code>forEach</code> are used to efficiently handle data collections. For example:
+                                <pre class="bg-light p-3 border rounded"><code>const forecastHTML = data.list
+                    .filter((_, index) => index % 8 === 0)
+                    .map((entry) => {
+                      return `&lt;div class="forecast-item"&gt;...&lt;/div&gt;`;
+                    })
+                    .join("");</code></pre>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Explicación detallada del código JS en inglés -->
+                    <div class="">
+                      <div class="card shadow-lg">
+                        <div class="bg-warning text-white text-center p-2">
+                          <h2>Detailed Explanation of the JS Code (API)</h2>
+                        </div>
+                        <div class="" id="explanation">
+                          <div class="">
+                            <div class="card shadow-lg">
+                              <div class="card-body">
+                                <h2 class="text-primary">1. Initial Configuration</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>const apiKey = "eb4ae362308a4644aad02563c3c6cc4c";</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Defines the OpenWeatherMap API key, which will be used to authenticate API requests.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>const apiBase = "https://api.openweathermap.org/data/2.5";</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Sets the base URL for the OpenWeatherMap API, which will be used to make requests.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>let map;</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Declares a global variable to store the Leaflet map instance.
+                                </p>
+
+                                <h2 class="text-primary">2. Function to Fetch Data (<code>fetchWeather</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>async function fetchWeather(city, unit) {</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Declares an asynchronous function responsible for fetching weather data for a specific city.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>const response = await fetch(`${apiBase}/weather?q=${city}&units=${unit}&appid=${apiKey}`);</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Makes an HTTP GET request to the OpenWeatherMap API to fetch weather data.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>if (!response.ok) throw new Error("City not found");</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Checks if the request was successful. If not, it throws an error with a custom message.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>return response.json();</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Converts the API response into a JSON object and returns it.
+                                </p>
+
+                                <h2 class="text-primary">3. Function to Update the UI (<code>updateWeatherUI</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>function updateWeatherUI(data) {</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Updates the user interface with the weather data obtained from the API.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("city-name").textContent = `${data.name}, ${data.sys.country}`;</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Displays the city name and country in the interface.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>document.getElementById("temperature").textContent = `🌡️ Temp: ${data.main.temp} °${unitSelect.value === "metric" ? "C" : "F"}`;</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Displays the temperature in the interface, using the selected unit (Celsius or Fahrenheit).
+                                </p>
+
+                                <h2 class="text-primary">4. Function to Update the Map (<code>updateMap</code>)</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>function updateMap(lat, lon, cityName) {</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Updates the map position and marker to reflect the location of the searched city.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>map.setView([lat, lon], 10);</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Centers the map on the city's coordinates and adjusts the zoom level.
+                                </p>
+
+                                <h2 class="text-primary">5. Event Handling</h2>
+
+                                <pre class="bg-light p-3 border rounded"><code>searchBtn.addEventListener("click", async () => { ... });</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Handles the click event on the search button, initiating the data fetching and UI update process.
+                                </p>
+
+                                <pre class="bg-light p-3 border rounded"><code>cityInput.addEventListener("keydown", (event) => { ... });</code></pre>
+                                <p>
+                                  <strong>What does it do?</strong> Handles the Enter key press event in the city input field, simulating a click on the search button.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer text-center">
+                          <small class="text-muted">Developed with ❤️ by Jose</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie del modal -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="mb-5">
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fw-medium">
+        <p class="col-md-4 mb-0 text-body-secondary">
+          Jose &copy; 2025. All rights reserved.
+        </p>
+        <a href="#"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img class="" width="40px" src="iconos/PJ_logo.svg" alt="" />
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a href="pagecomplete3.html" class="nav-link px-2 text-body-secondary">API 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.2.html" class="nav-link px-2 text-body-secondary">API 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.3.html" class="nav-link px-2 text-body-secondary">API 3</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    
+  </div>
+
+  <!-- Sección: Botones de navegación -->
+  <div class=" container" >
+    <div class="container d-flex justify-content-center mb-3 border-top">
+      <div class="mt-3 d-lg-flex">
+        <a class="btn btn-secondary mb-3 d-flex justify-content-center mb-lg-0" href="pagehomeporfoliojose.html#homepagecomple"
+          role="button">Anterior sitio web completo</a>
+        <a class="btn btn-primary d-flex justify-content-center ms-lg-3" href="pagecomplete4.0.html"
+           role="button">Siguiente sitio web completo</a>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mb-4">
+      <div>
+        <a class="btn btn-primary" href="pagehomeporfoliojose.html#homepagecomple" role="button">Portfolio Home</a>
+      </div>
+    </div>      
+  </div>
+
+  <!-- Scripts de JavaScript -->
+  <script src="js/pagecomplete3.3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</body>
+
+</html>

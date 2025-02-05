@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Enlaces a hojas de estilo -->
+  <link rel="stylesheet" href="css/styledepaginahome.css" />
+  <link rel="stylesheet" href="css/stylepagecomplete3.css" />
+
+  <!-- Título de la página -->
+  <title>Portfolio Jose</title>
+</head>
+
+<body>
+  <!-- Barra de navegación superior -->
+  <div class="">
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid mt-2 mb-2">
+        <a class="navbar-brand fw-bold" href="#">Portfolio José</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú desplegable lateral -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <div class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a href="#" class="text-decoration-none">
+                <img width="40px" src="iconos/PJ_logo.svg" alt="" />
+              </a>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="pagecomplete3.html">API 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pagecomplete3.2.html">API 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pagecomplete3.3.html">API 3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br />
+  <br />
+
+  <!-- Sección principal del contenido -->
+  <div class="">
+    <div class="hero-section">
+      <div class="hero-text">
+        <div class="container justify-content-center d-flex">
+          <div class="container">
+            <div class="container mt-5">
+              <div class="justify-content-end d-flex mb-5">
+                <div class="justify-content-center d-flex">
+                  <div>
+                    <h5 class="text-center text-success">🌱 API 🌿</h5>
+
+                    <!-- Botón para abrir el modal de documentación del API -->
+                    <button class="btn details-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      View API documentation / Ver documentación del API
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Título y descripción de la sección de publicaciones -->
+              <h1 class="text-center mb-4 text-success">
+                🌱 Plant Wall Posts 🌿
+              </h1>
+              <p class="text-center mb-4 bg-success-btn p-2 rounded-3">
+                Explore posts about plants and learn detailed information
+                about each.
+              </p>
+
+              <!-- Contenedor para las publicaciones generadas dinámicamente -->
+              <div id="posts-container" class="row gy-4"></div>
+
+              <!-- Botones de navegación entre páginas -->
+              <div class="d-flex justify-content-between my-4">
+                <button id="previous-page" class="btn btn-secondary" disabled>
+                  Anterior
+                </button>
+                <button id="next-page" class="btn btn-primary">
+                  Siguiente
+                </button>
+              </div>
+
+              <!-- Paginación -->
+              <nav aria-label="Page navigation">
+                <ul id="pagination" class="pagination justify-content-center"></ul>
+              </nav>
+            </div>
+
+            <!-- Modal para mostrar detalles de una publicación -->
+            <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel">
+                      Plant Details
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img id="modal-image" src="" alt="Plant Image" class="img-fluid mb-3" />
+                    <h5 id="modal-title" class="text-success"></h5>
+                    <p id="modal-description"></p>
+                    <p id="modal-user" class="text-muted"></p>
+                    <p id="modal-date" class="text-muted"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal de documentación del API -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <!-- Encabezado del modal -->
+                  <div class="modal-header">
+                    <h5 class="modal-title px-3" id="exampleModalLabel">
+                      API documentation / Documentación del API
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+
+                  <div>
+                    <!-- Cuerpo del modal -->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="">
+                          <div class="container my-5">
+                            <div class="card shadow-lg">
+                              <div class="card-header text-center">
+                                <h2>Resumen General del API</h2>
+                                <h5 class="fw-light text-white">
+                                  <em> Versión español </em>
+                                </h5>
+                              </div>
+                              <div class="card-body">
+                                <p class="lead">
+                                  El archivo contiene código JavaScript que
+                                  simula un sistema de publicaciones paginadas
+                                  utilizando una API para obtener imágenes
+                                  aleatorias. Este sistema muestra tarjetas
+                                  con información simulada, permite la
+                                  interacción con botones de "like" y
+                                  "dislike", y muestra detalles en un modal al
+                                  hacer clic en una tarjeta. También incluye
+                                  navegación entre páginas y muestra mensajes
+                                  interactivos para mejorar la experiencia del
+                                  usuario.
+                                </p>
+                              </div>
+                              <div class="card-footer text-center">
+                                <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="container my-5">
+                            <div class="card shadow-lg">
+                              <div class="card-header text-center">
+                                <h2>API General Summary</h2>
+                                <h5 class="fw-light text-white">
+                                  <em> English version </em>
+                                </h5>
+                              </div>
+                              <div class="card-body">
+                                <p class="lead">
+                                  The file contains JavaScript code that
+                                  simulates a paginated post system using an
+                                  API to fetch random images. This system
+                                  displays cards with simulated information,
+                                  allows interaction with "like" and "dislike"
+                                  buttons, and shows details in a modal when a
+                                  card is clicked. It also includes navigation
+                                  between pages and displays interactive
+                                  messages to enhance the user experience.
+                                </p>
+                              </div>
+                              <div class="card-footer text-center">
+                                <small class="text-muted">Developed with ❤️ by Jose</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Primera División -->
+                        <div class="col-md-6">
+                          <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                            <em> Versión español</em>
+                          </div>
+
+                          <div class="mt-3">
+                            <div class="mb-4">
+                              <div class="card shadow-lg">
+                                <div class="card-header text-center">
+                                  <h2>
+                                    Cumplimiento de estándares de JavaScript
+                                    (ECMAScript (ES) 6)
+                                  </h2>
+                                </div>
+                                <div class="container" id="explanation">
+                                  <!-- SECCIÓN 1: CONSTANTES Y VARIABLES -->
+                                  <div class="mt-2 code-section">
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        1. Uso de funciones modernas y
+                                        semánticas
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Descripción:</strong> El
+                                        código utiliza <code>const</code> y
+                                        <code>let</code> para declarar
+                                        variables, una práctica moderna
+                                        introducida en ES6. Estas
+                                        declaraciones son más seguras y
+                                        previenen errores relacionados con
+                                        variables globales.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        2. Buenas prácticas de DOM
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Descripción:</strong> Se
+                                        utiliza
+                                        <code>document.createDocumentFragment</code>
+                                        para manipular elementos de manera
+                                        eficiente y reducir el número de
+                                        operaciones directas en el DOM, lo que
+                                        mejora el rendimiento. Además, los
+                                        eventos están desacoplados del HTML
+                                        utilizando
+                                        <code>addEventListener</code>, una
+                                        práctica recomendada para mantener el
+                                        código modular.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        3. Seguridad
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Descripción:</strong> El
+                                        código incluye una función de
+                                        sanitización para evitar inyecciones
+                                        de HTML o ataques XSS (Cross-Site
+                                        Scripting). Esto asegura que cualquier
+                                        entrada de usuario sea transformada en
+                                        texto seguro antes de ser renderizada
+                                        en el DOM.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        4. Uso de APIs actualizadas
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Descripción:</strong>
+                                        Métodos modernos como
+                                        <code>toLocaleDateString</code>
+                                        (para formatear fechas de manera
+                                        local) y
+                                        <code>addEventListener</code>
+                                        (para manejar eventos) están en línea
+                                        con las prácticas actuales y ofrecen
+                                        mejor compatibilidad y flexibilidad.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        Conclusión
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Resultado:</strong> El código
+                                        cumple con los estándares de
+                                        JavaScript 2024, adoptando prácticas
+                                        modernas, optimizaciones de
+                                        rendimiento y medidas de seguridad
+                                        esenciales. Además, está diseñado para
+                                        ser modular y mantener una buena
+                                        legibilidad.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class=" ">
+                              <div class="card shadow-lg">
+                                <div class="card-header text-center">
+                                  <h2>
+                                    Explicación detallada del código JS (API)
+                                  </h2>
+                                </div>
+                                <div class="container" id="explanation">
+                                  <!-- SECCIÓN 1: CONSTANTES Y VARIABLES -->
+                                  <div class="mt-2 code-section">
+                                    <h2 class="code-title">
+                                      1. Definición de constantes y variables
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>const PLANT_IMAGE_API =
+                                          "https://picsum.photos/300/200";</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Esta constante almacena la URL base de
+                                      un servicio que genera imágenes
+                                      aleatorias con dimensiones específicas
+                                      (300x200 píxeles). Se utiliza para
+                                      representar imágenes de plantas.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const POSTS_PER_PAGE = 9;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Especifica cuántas publicaciones se
+                                      deben mostrar por página. Aquí, el valor
+                                      es 9.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const TOTAL_POSTS = 30;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Determina el número total de
+                                      publicaciones disponibles en el sistema.
+                                      En este caso, hay 30 publicaciones
+                                      simuladas.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>let currentPage = 1;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Variable que rastrea la página
+                                      actualmente visible. Comienza con un
+                                      valor de 1.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 2: ELEMENTOS DOM -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      2. Selección de elementos del DOM
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>const postsContainer =
+                                          document.querySelector("#posts-container");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Selecciona el elemento contenedor donde
+                                      se insertarán las publicaciones
+                                      generadas dinámicamente.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const previousPageBtn =
+                                          document.querySelector("#previous-page");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Obtiene el botón de "Página Anterior"
+                                      que se usará para navegar entre páginas.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const nextPageBtn =
+                                          document.querySelector("#next-page");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Obtiene el botón de "Página Siguiente",
+                                      que permite avanzar en la paginación.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 3: FUNCIÓN DE SANITIZACIÓN -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      3. Función de sanitización
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>
+                                          function sanitize(input) {<br />
+                                          &nbsp;&nbsp;const div =
+                                          document.createElement("div");<br />
+                                          &nbsp;&nbsp;div.textContent =
+                                          input;<br />
+                                          &nbsp;&nbsp;return div.innerHTML;<br />
+                                          }
+                                        </code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Sanitiza el contenido de entrada (texto
+                                      proporcionado) para evitar inyecciones
+                                      de HTML o ataques XSS. Utiliza un
+                                      elemento temporal `div` para convertir
+                                      cualquier entrada en texto puro.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 4: GENERAR PUBLICACIONES -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      4. Generar publicaciones
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function generatePosts(page) { ...
+                                          }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Esta función genera dinámicamente
+                                      tarjetas de publicaciones en la página
+                                      actual. Los pasos clave incluyen:
+                                      <ul>
+                                        <li>
+                                          Calcular el rango de publicaciones a
+                                          mostrar según la página actual.
+                                        </li>
+                                        <li>
+                                          Crear elementos DOM (`div`) para
+                                          cada publicación con detalles como
+                                          título, usuario, fecha, y botones de
+                                          interacción.
+                                        </li>
+                                        <li>
+                                          Sanitizar el contenido dinámico
+                                          antes de insertarlo en el DOM.
+                                        </li>
+                                        <li>
+                                          Actualizar los botones de navegación
+                                          según la página actual.
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 5: ACTUALIZAR BOTONES DE NAVEGACIÓN -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      5. Actualizar botones de navegación
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>
+                                          function updateNavigationButtons()
+                                          {<br />
+                                          &nbsp;&nbsp;const totalPages =
+                                          Math.ceil(TOTAL_POSTS /
+                                          POSTS_PER_PAGE);<br />
+                                          &nbsp;&nbsp;previousPageBtn.disabled =
+                                          currentPage === 1;<br />
+                                          &nbsp;&nbsp;nextPageBtn.disabled =
+                                          currentPage === totalPages;<br />
+                                          }
+                                        </code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Desactiva los botones "Anterior" y
+                                      "Siguiente" si se encuentran en los
+                                      límites del rango de páginas. Esto
+                                      asegura que los usuarios no puedan
+                                      navegar fuera de los límites.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 6: MOSTRAR DETALLES EN UN MODAL -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      6. Mostrar detalles en un modal
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function showDetails(postId) { ...
+                                          }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Muestra los detalles de una publicación
+                                      seleccionada dentro de un modal de
+                                      Bootstrap. Actualiza dinámicamente los
+                                      elementos del modal con información
+                                      específica de la publicación
+                                      seleccionada.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 7: MANEJO DE INTERACCIONES -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      7. Manejo de interacciones
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function handleInteraction(event,
+                                          action, postId) { ... }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Administra las interacciones del usuario
+                                      con los botones "Me gusta" y "No me
+                                      gusta". Resalta el botón seleccionado y
+                                      muestra un mensaje con la acción
+                                      realizada.
+                                    </div>
+                                  </div>
+
+                                  <!-- SECCIÓN 8: EVENTOS E INICIALIZACIÓN -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      8. Eventos e inicialización
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>previousPageBtn.addEventListener("click",
+                                          ...);</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Asigna eventos a los botones de
+                                      navegación para cambiar la página
+                                      visible y actualizar las publicaciones
+                                      mostradas.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>generatePosts(currentPage);</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Inicializa el contenido de la página
+                                      generando publicaciones para la primera
+                                      página.
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                  <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Segunda División -->
+                        <div class="col-md-6">
+                          <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                            <em> English version</em>
+                          </div>
+
+                          <div class="mt-3">
+                            <div class="mb-4">
+                              <div class="card shadow-lg">
+                                <div class="card-header text-center">
+                                  <h2>
+                                    JavaScript (ECMAScript (ES) 6) standards
+                                    compliance
+                                  </h2>
+                                </div>
+                                <div class="container" id="explanation">
+                                  <!-- Sección 1: Constantes y Variables -->
+                                  <div class="mt-2 code-section">
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        1. Use of modern and semantic
+                                        functions
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Description:</strong>
+                                        The code uses <code>const</code> and
+                                        <code>let</code> to declare variables,
+                                        a modern practice introduced in ES6.
+                                        These declarations are safer and
+                                        prevent errors related to global
+                                        variables.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        2. Good DOM practices
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Description:</strong>
+                                        The code uses
+                                        <code>document.createDocumentFragment</code>
+                                        to efficiently manipulate elements and
+                                        minimize direct DOM operations,
+                                        improving performance. Additionally,
+                                        events are decoupled from the HTML
+                                        using
+                                        <code>addEventListener</code>, a
+                                        recommended practice for maintaining
+                                        modular code.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        3. Security
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Description:</strong>
+                                        The code includes a sanitization
+                                        function to prevent HTML injection or
+                                        XSS (Cross-Site Scripting) attacks.
+                                        This ensures that any user input is
+                                        converted into safe text before being
+                                        rendered in the DOM.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        4. Use of updated APIs
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Description:</strong>
+                                        Modern methods like
+                                        <code>toLocaleDateString</code>
+                                        (to format dates locally) and
+                                        <code>addEventListener</code>
+                                        (for handling events) align with
+                                        current best practices, offering
+                                        better compatibility and flexibility.
+                                      </div>
+                                    </div>
+
+                                    <div class="evaluation-section">
+                                      <h2 class="evaluation-title">
+                                        Conclusion
+                                      </h2>
+                                      <div class="evaluation-point">
+                                        <strong>Result:</strong> The code
+                                        complies with JavaScript 2024
+                                        standards, adopting modern practices,
+                                        performance optimizations, and
+                                        essential security measures.
+                                        Additionally, it is designed to be
+                                        modular and maintain good readability.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="container">
+                              <div class="card shadow-lg">
+                                <div class="card-header text-center">
+                                  <h2>
+                                    Detailed explanation of the JS code (API)
+                                  </h2>
+                                </div>
+                                <div class="container" id="explanation">
+                                  <!-- Section 1: Constants and Variables -->
+                                  <div class="mt-2 code-section">
+                                    <h2 class="code-title">
+                                      1. Defining constants and variables
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>const PLANT_IMAGE_API =
+                                          "https://picsum.photos/300/200";</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      This constant stores the base URL of a
+                                      service that generates random images
+                                      with specific dimensions (300x200
+                                      pixels). It is used to represent plant
+                                      images.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const POSTS_PER_PAGE = 9;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Specifies how many posts should be
+                                      displayed per page. Here, the value is
+                                      9.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const TOTAL_POSTS = 30;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Determines the total number of posts
+                                      available in the system. In this case,
+                                      there are 30 simulated posts.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>let currentPage = 1;</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      A variable that tracks the currently
+                                      visible page. It starts with a value of
+                                      1.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 2: DOM Elements -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      2. Selecting DOM elements
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>const postsContainer =
+                                          document.querySelector("#posts-container");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Selects the container element where the
+                                      dynamically generated posts will be
+                                      inserted.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const previousPageBtn =
+                                          document.querySelector("#previous-page");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Gets the "Previous Page" button, which
+                                      will be used to navigate between pages.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>const nextPageBtn =
+                                          document.querySelector("#next-page");</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Gets the "Next Page" button, which
+                                      allows advancing in pagination.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 3: Sanitization Function -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      3. Sanitization function
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>
+                                          function sanitize(input) {<br />
+                                          &nbsp;&nbsp;const div =
+                                          document.createElement("div");<br />
+                                          &nbsp;&nbsp;div.textContent =
+                                          input;<br />
+                                          &nbsp;&nbsp;return div.innerHTML;<br />
+                                          }
+                                        </code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Sanitizes the input content (provided
+                                      text) to prevent HTML injection or XSS
+                                      attacks. A temporary `div` element is
+                                      used to convert any input into plain
+                                      text.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 4: Generating Posts -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      4. Generating posts
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function generatePosts(page) { ...
+                                          }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      This function dynamically generates
+                                      cards for posts on the current page. Key
+                                      steps include:
+                                      <ul>
+                                        <li>
+                                          Calculating the range of posts to
+                                          display based on the current page.
+                                        </li>
+                                        <li>
+                                          Creating DOM elements (`div`) for
+                                          each post, with details like title,
+                                          user, date, "Like", and "Dislike"
+                                          buttons.
+                                        </li>
+                                        <li>
+                                          Sanitizing dynamic content before
+                                          inserting it into the DOM.
+                                        </li>
+                                        <li>
+                                          Updating navigation buttons based on
+                                          the current page.
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 5: Updating Navigation Buttons -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      5. Updating navigation buttons
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>
+                                          function updateNavigationButtons()
+                                          {<br />
+                                          &nbsp;&nbsp;const totalPages =
+                                          Math.ceil(TOTAL_POSTS /
+                                          POSTS_PER_PAGE);<br />
+                                          &nbsp;&nbsp;previousPageBtn.disabled =
+                                          currentPage === 1;<br />
+                                          &nbsp;&nbsp;nextPageBtn.disabled =
+                                          currentPage === totalPages;<br />
+                                          }
+                                        </code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Disables the "Previous" and "Next"
+                                      buttons if they are at the boundaries of
+                                      the page range. This ensures users
+                                      cannot navigate beyond limits.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 6: Displaying Details in a Modal -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      6. Displaying details in a modal
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function showDetails(postId) { ...
+                                          }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Displays details of a selected post
+                                      within a Bootstrap modal. Dynamically
+                                      updates modal elements with specific
+                                      post information.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 7: Handling Interactions -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      7. Handling interactions
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>function handleInteraction(event,
+                                          action, postId) { ... }</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Manages user interactions with the
+                                      "Like" and "Dislike" buttons. Highlights
+                                      the selected button and displays a
+                                      message with the performed action.
+                                    </div>
+                                  </div>
+
+                                  <!-- Section 8: Events and Initialization -->
+                                  <div class="code-section">
+                                    <h2 class="code-title">
+                                      8. Navigation events
+                                    </h2>
+                                    <div class="code-line">
+                                      <code>previousPageBtn.addEventListener("click",
+                                          ...);</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Assigns events to navigation buttons to
+                                      change the visible page and update the
+                                      displayed posts.
+                                    </div>
+                                    <div class="code-line">
+                                      <code>generatePosts(currentPage);</code>
+                                    </div>
+                                    <div class="code-desc">
+                                      Initializes the page content by
+                                      generating posts for the first page.
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                  <small class="text-muted">Developed with ❤️ by Jose</small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pie de página del modal -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal de Detalles -->
+            <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">
+                      Plant Details
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img id="modal-image" src="" alt="Plant Image" />
+                    <p id="modal-description">Description here</p>
+                    <p id="modal-user">User:</p>
+                    <p id="modal-date">Date:</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Pie de página -->
+  <div class="mb-5">
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fw-medium">
+        <p class="col-md-4 mb-0 text-body-secondary">
+          Jose &copy; 2025. All rights reserved.
+        </p>
+        <a href="#"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img width="40px" src="iconos/PJ_logo.svg" alt="" />
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a href="pagecomplete3.html" class="nav-link px-2 text-body-secondary">API 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.2.html" class="nav-link px-2 text-body-secondary">API 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.3.html" class="nav-link px-2 text-body-secondary">API 3</a>
+          </li>
+        </ul>
+      </footer>
+    </div>   
+  </div>
+
+  <!-- Sección: Botones de navegación -->
+  <div class=" container" >
+    <div class="container d-flex justify-content-center mb-3 border-top">
+      <div class="mt-3 d-lg-flex">
+        <a class="btn btn-secondary mb-3 d-flex justify-content-center mb-lg-0" href="pagehomeporfoliojose.html#homepagecomple"
+          role="button">Anterior sitio web completo</a>
+        <a class="btn btn-primary d-flex justify-content-center ms-lg-3" href="pagecomplete4.0.html"
+          role="button">Siguiente sitio web completo</a>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mb-4">
+      <div>
+        <a class="btn btn-primary" href="pagehomeporfoliojose.html#homepagecomple" role="button">Portfolio Home</a>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Nota informativa -->
+  <div class="container mb-5">
+    <div class="container bg-danger text-white p-4">
+      <div class="fw-bold border-bottom mb-3">Nota</div>
+
+      Es importante señalar que el botón «Anterior sitio web completo»
+      aparece en gris para indicar que no hay un sitio previo. Sin
+      embargo, sigue siendo funcional y, al hacer clic en él, se accederá
+      a la página de inicio del portafolio.
+    </div>
+  </div>
+
+  <!-- Script Local -->
+  <script src="js/pagecomplete3.js"></script>
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

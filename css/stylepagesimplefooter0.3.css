@@ -1,0 +1,200 @@
+/* Reseteo de márgenes, relleno y configuración de box-sizing */
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+  box-sizing: border-box; /* Incluye bordes y rellenos en las dimensiones */
+}
+
+/* Contenedor principal para limitar el ancho del contenido */
+.container {
+  width: 90%; /* Anchura máxima del 90% del contenedor */
+  max-width: 1200px; /* Ancho máximo absoluto */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Estilos generales para el pie de página */
+.footer {
+  display: flex; /* Flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  gap: 2rem; /* Espaciado entre elementos del footer */
+  padding: 2rem 0; /* Relleno superior e inferior */
+  border-top: 1px solid #ddd; /* Línea superior del footer */
+}
+
+/* Sección individual del pie de página */
+.footer-section {
+  flex: 1 1 200px; /* Tamaño flexible con un ancho mínimo de 200px */
+}
+
+/* Encabezados dentro de las secciones del pie de página */
+.footer-section h5 {
+  font-size: 1.2rem; /* Tamaño de fuente del encabezado */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  color: #212529; /* Color del texto */
+}
+
+/* Listas sin estilo predeterminado */
+.footer-section ul {
+  list-style: none; /* Sin viñetas en las listas */
+}
+
+/* Elementos de lista dentro de las secciones del pie de página */
+.footer-section ul li {
+  margin-bottom: 0.5rem; /* Espaciado inferior entre elementos */
+}
+
+/* Enlaces dentro de las listas del pie de página */
+.footer-section ul li a {
+  color: #6c757d; /* Color del texto del enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 1rem; /* Tamaño de fuente */
+}
+
+/* Efecto hover en los enlaces */
+.footer-section ul li a:hover {
+  color: #212529; /* Cambia el color al pasar el cursor */
+}
+
+/* Estilos para el formulario de suscripción */
+.subscribe-form {
+  display: flex; /* Diseño flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  gap: 0.5rem; /* Espaciado entre elementos del formulario */
+}
+
+/* Estilos para el campo de entrada en el formulario */
+.subscribe-form input {
+  flex: 1; /* Toma todo el espacio disponible */
+  padding: 0.5rem; /* Relleno interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  border: 1px solid #ddd; /* Borde del campo */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Botón de envío del formulario */
+.subscribe-form button {
+  padding: 0.5rem 1rem; /* Relleno interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  color: #fff; /* Color del texto */
+  background-color: #007bff; /* Color de fondo */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al estilo de mano */
+}
+
+/* Contenedor inferior del pie de página */
+.footer-bottom {
+  display: flex; /* Diseño flexible */
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: center; /* Alineación vertical centrada */
+  padding-top: 1rem; /* Espaciado superior */
+  border-top: 1px solid #ddd; /* Línea superior del contenedor */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Texto dentro del contenedor inferior del pie de página */
+.footer-bottom p {
+  font-size: 0.9rem; /* Tamaño de fuente del texto */
+}
+
+/* Lista de enlaces sociales */
+.social-links {
+  list-style: none; /* Sin viñetas */
+  display: flex; /* Diseño flexible */
+  gap: 1rem; /* Espaciado entre elementos */
+}
+
+/* Imágenes dentro de los enlaces sociales */
+.social-links li a img {
+  width: 40px; /* Ancho fijo de la imagen */
+  height: auto; /* Altura proporcional */
+}
+
+/* Contenedor para notas o mensajes */
+.container-note {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+  padding: 20px; /* Relleno interno */
+  margin-top: 10px; /* Margen superior */
+}
+
+/* Caja de notas o mensajes */
+.note-box {
+  background-color: #ff6347; /* Fondo color rojo tomate */
+  color: #ffffff; /* Texto en blanco */
+  padding: 20px; /* Relleno interno */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1000px; /* Ancho máximo */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Encabezado de la caja de notas */
+.note-header {
+  font-weight: 700; /* Fuente en negrita */
+  padding-bottom: 10px; /* Espaciado inferior */
+  border-bottom: 1px solid #dee2e6; /* Línea inferior */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Contenedor de navegación */
+.nav-container {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+  padding: 8px; /* Relleno interno */
+}
+
+/* Clase para centrar elementos */
+.align-center {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Estilos para botones */
+.button {
+  padding: 10px 20px; /* Relleno interno */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  margin-right: 10px; /* Margen derecho */
+  display: inline-block; /* Bloque en línea */
+  text-align: center; /* Centrado de texto */
+}
+
+/* Botón principal */
+.primary-button {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Texto blanco */
+}
+
+/* Botón secundario */
+.secondary-button {
+  background-color: #6c757d; /* Fondo gris */
+  color: white; /* Texto blanco */
+}
+
+/* Efecto hover en botones */
+.button:hover {
+  opacity: 0.9; /* Reduce opacidad */
+}
+
+/* Botón deshabilitado */
+.disabled {
+  background-color: #6c757d; /* Fondo gris */
+  color: white; /* Texto blanco */
+}
+
+/* ---------- Media Queries ---------- */
+
+/* Estilos para pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  /* Cambia el diseño del footer a columnas */
+  .footer {
+    flex-direction: column;
+  }
+
+  /* Cambia el diseño del contenedor inferior */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

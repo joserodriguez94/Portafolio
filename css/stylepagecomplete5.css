@@ -1,0 +1,107 @@
+/* Estilos personalizados para el sitio de comercio electrónico */
+
+/* Estilos para las imágenes dentro de las tarjetas */
+.card img {
+  width: 100%; /* Ancho al 100% del contenedor */
+  height: 100%; /* Altura al 100% del contenedor */
+  object-fit: cover; /* Ajusta la imagen para cubrir el espacio sin distorsionar */
+}
+
+/* Estilos para las estrellas de calificación */
+.rating .star {
+  font-size: 1.5em; /* Tamaño de fuente grande para las estrellas */
+  color: gray; /* Color gris por defecto */
+  cursor: pointer; /* Cursor de puntero para indicar que es clickeable */
+}
+
+/* Estilos para las alertas */
+.alert {
+  position: fixed; /* Posición fija en la pantalla */
+  top: 100px; /* Distancia desde la parte superior */
+  right: 20px; /* Distancia desde la derecha */
+  z-index: 1000; /* Z-index alto para asegurar que esté por encima de otros elementos */
+}
+
+/* Elimina el fondo oscuro al abrir el modal */
+.modal-backdrop {
+  display: none !important; /* Oculta el fondo oscuro del modal */
+}
+
+/* Estilos para el modal */
+.modal {
+  background-color: transparent !important; /* Fondo transparente para el modal */
+}
+
+/* Estilos para el fondo de la página */
+.fondo {
+  background-position: center; /* Centra la imagen de fondo */
+  height: 100%; /* Altura al 100% del contenedor */
+  background: linear-gradient(
+      rgba(197, 194, 194, 0.6), /* Gradiente lineal con transparencia */
+      rgba(197, 194, 194, 0.6)
+    ),
+    url(phoneback.jpg); /* Imagen de fondo */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el espacio */
+}
+
+/* Estilos para el texto con sombra */
+.text-shadow {
+  color: #343a40; /* Color de texto oscuro elegante */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil para el texto */
+}
+
+/* Estilos para el fondo de texto con bordes redondeados y sombra */
+.colortext-bg {
+  background: rgba(255, 255, 255, 0.7); /* Fondo translúcido */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+  text-align: center; /* Texto centrado */
+}
+
+/* Estilos para iconos con filtro de color blanco */
+.icon-img-colorblanco {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(93%) saturate(26%)
+    hue-rotate(56deg) brightness(104%) contrast(100%); /* Filtro para convertir el icono a blanco */
+}
+
+/* Estilos para la sección de controles */
+#controls {
+  text-align: center; /* Texto centrado */
+  margin-top: 20px; /* Margen superior */
+}
+
+/* Estilos para la sección de resultados */
+#results {
+  margin-top: 30px; /* Margen superior */
+  display: flex; /* Flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px; /* Espacio entre elementos */
+}
+
+/* Estilos para cada ítem de resultado */
+.result-item {
+  background: white; /* Fondo blanco */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  width: 300px; /* Ancho fijo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para hover */
+}
+
+/* Efecto hover para los ítems de resultado */
+.result-item:hover {
+  transform: translateY(-5px); /* Desplaza el elemento hacia arriba */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilos para el texto en negrita dentro de los ítems de resultado */
+.result-item strong {
+  color: #007bff; /* Color azul para el texto en negrita */
+}
+
+/* Estilos para los párrafos dentro de los ítems de resultado */
+.result-item p {
+  margin: 10px 0 0; /* Margen superior y sin margen inferior */
+}

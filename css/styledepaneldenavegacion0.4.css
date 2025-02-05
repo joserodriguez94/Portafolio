@@ -1,0 +1,174 @@
+/* === Estilos globales === */
+
+/* Estilo global que aplica a todos los elementos */
+* {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    box-sizing: border-box; /* Incluye padding y bordes en el tamaño total */
+}
+
+/* === Barra de navegación === */
+
+/* Contenedor principal de la barra de navegación */
+.navbar {
+    display: flex; /* Utiliza flexbox para organizar los elementos */
+    justify-content: space-between; /* Distribuye los elementos hacia los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    background-color: #f8f9fa; /* Fondo de color claro */
+    color: black; /* Texto en negro */
+    width: 100%; /* Ocupa el ancho completo */
+    padding: 10px; /* Añade espacio interno alrededor de los elementos */
+}
+
+/* Contenedor interno de los elementos de la barra de navegación */
+.navdisplay {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    justify-content: space-between; /* Espacia los elementos hacia los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+}
+
+/* Contenedor de un menú desplegable */
+.dropdown-1 {
+    width: 30%; /* Ocupa el 30% del ancho del contenedor padre */
+}
+
+/* Estilo del logotipo */
+.logo {
+    font-size: 1.5rem; /* Tamaño de fuente más grande para destacar */
+    justify-content: end; /* Alinea el contenido al final */
+    display: flex; /* Usa flexbox para organizar elementos internos */
+}
+
+/* Contenedor de un elemento desplegable */
+.desplegable {
+    position: relative; /* Posiciona los elementos hijos de forma absoluta respecto a este contenedor */
+    display: inline-block; /* Alinea en línea con otros elementos */
+    width: 100px; /* Ancho máximo del contenedor */
+}
+
+/* Botón para activar el desplegable */
+.boton-desplegable {
+    background-color: transparent; /* Fondo transparente */
+    color: black; /* Texto negro */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor a "puntero" */
+    font-size: 16px; /* Tamaño estándar del texto */
+    display: flex; /* Flexbox para organizar elementos internos */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos internos hacia los extremos */
+    width: 150px; /* Ancho máximo del botón */
+}
+
+/* Icono de flecha en el botón desplegable */
+.boton-desplegable .flecha {
+    transition: transform 0.3s ease; /* Suaviza la animación de rotación */
+}
+
+/* Rotación de la flecha cuando el botón está activo */
+.boton-desplegable.active .flecha {
+    transform: rotate(180deg); /* Rota la flecha 180 grados */
+}
+
+/* Estilo para las imágenes dentro del botón desplegable */
+.boton-desplegable-foto {
+    width: 100px; /* Establece un ancho fijo */
+}
+
+/* Alineación de un desplegable al extremo derecho */
+.desplegable-end {
+    display: flex; /* Flexbox para la alineación */
+    justify-content: end; /* Alinea los elementos hacia el final */
+}
+
+/* Imágenes con bordes redondeados */
+.img-rounded {
+    border-radius: 10px; /* Bordes redondeados */
+    -webkit-border-radius: 10px; /* Compatibilidad con navegadores webkit */
+    -moz-border-radius: 10px; /* Compatibilidad con navegadores Mozilla */
+    -ms-border-radius: 10px; /* Compatibilidad con navegadores de Microsoft */
+    -o-border-radius: 10px; /* Compatibilidad con navegadores Opera */
+}
+
+/* === Menú desplegable === */
+
+/* Contenedor del contenido desplegable */
+.contenido-desplegable {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posiciona el contenido relativo al contenedor padre */
+    background-color: #f9f9f9; /* Fondo claro */
+    width: 120px; /* Ancho máximo del contenido */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    z-index: 1; /* Prioridad del contenido sobre otros elementos */
+}
+
+/* Estilo para los enlaces dentro del menú desplegable */
+.contenido-desplegable a {
+    color: black; /* Texto negro */
+    padding: 12px 16px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado */
+    display: block; /* Cada enlace ocupa una línea completa */
+}
+
+/* Efecto hover en los enlaces del menú desplegable */
+.contenido-desplegable a:hover {
+    background-color: #ddd; /* Fondo gris claro al pasar el mouse */
+}
+
+/* Ajusta la posición del contenido desplegable hacia la izquierda */
+.contenido-left {
+    right: 0px; /* Alinea el contenido a la derecha del contenedor padre */
+}
+
+/* Añade margen derecho */
+.margin-right {
+    margin-right: 10px; /* Margen de 10 píxeles a la derecha */
+}
+
+/* === Campo de búsqueda === */
+
+/* Contenedor del campo de búsqueda */
+.search-container {
+    width: 30%; /* Ocupa el 30% del ancho del contenedor padre */
+}
+
+/* Estilo del campo de entrada de texto para búsqueda */
+#search-input {
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 8px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño estándar del texto */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Resultados del campo de búsqueda */
+#search-results {
+    width: 100%; /* Ancho completo del contenedor */
+    overflow-wrap: break-word; /* Permite dividir palabras largas */
+    font-size: 18px; /* Tamaño mayor del texto */
+}
+
+/* === Alineación central === */
+
+/* Contenedor para centrar elementos */
+.nav-container {
+    display: flex; /* Flexbox para organizar el contenido */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 8px; /* Espaciado interno */
+}
+
+/* Clase para centrar contenido */
+.align-center {
+    display: flex; /* Flexbox para organizar el contenido */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* ---------- Media Query ---------- */
+
+/* Estilos para pantallas pequeñas (hasta 500px) */
+@media (max-width: 500px) {
+    .boton-desplegable {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        padding: 8px 15px; /* Ajusta el espaciado interno */
+        width: 100px; /* Limita el ancho máximo */
+    }
+}

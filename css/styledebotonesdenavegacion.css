@@ -1,0 +1,110 @@
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif; /* Fuente principal de la página */
+}
+
+/* Contenedor principal de navegación */
+.navegacion-botones {
+  display: flex; /* Establece un diseño flexible */
+  gap: 20px; /* Espaciado entre botones */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  padding-left: 10px; /* Espaciado izquierdo */
+  padding-right: 10px; /* Espaciado derecho */
+}
+
+/* Clase adicional para diseño de navegación */
+.display-flex-navegation {
+  display: flex; /* Diseño flexible */
+  margin-bottom: 20px; /* Espaciado inferior */
+  justify-content: center; /* Centra horizontalmente */
+  flex-wrap: wrap; /* Ajuste en varias líneas */
+  gap: 10px; /* Espaciado entre elementos */
+}
+
+/* Estilos generales para botones */
+.boton {
+  padding: 15px 30px; /* Espaciado interno del botón */
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+  text-align: center; /* Centra el texto */
+  text-decoration: none; /* Elimina subrayado */
+}
+
+/* Estilos específicos para botón "anterior 1" */
+.boton-anterior-1 {
+  background-color: #707172; /* Color de fondo predeterminado */
+}
+
+.boton-anterior-1:hover {
+  background-color: #868687; /* Cambio de color al pasar el cursor */
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Estilos específicos para botón "anterior" */
+.boton-anterior {
+  background-color: #0056b3; /* Color de fondo */
+}
+
+.boton-anterior:hover {
+  background-color: #17589e; /* Color al pasar el cursor */
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Estilos específicos para botón "siguiente" */
+.boton-siguiente {
+  background-color: #0056b3; /* Color de fondo */
+}
+
+.boton-siguiente:hover {
+  background-color: #17589e; /* Color al pasar el cursor */
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Estilos específicos para botón "portfolio" */
+.boton-portfolio {
+  background-color: #0056b3; /* Color de fondo */
+}
+
+.boton-portfolio:hover {
+  background-color: #17589e; /* Color al pasar el cursor */
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Contenedor de notas */
+.container-note {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 10px; /* Espaciado superior */
+}
+
+/* Caja de notas */
+.note-box {
+  background-color: #c70000; /* Fondo rojo oscuro para contraste */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px; /* Espaciado interno */
+  width: 100%; /* Ancho completo */
+  max-width: 1000px; /* Ancho máximo */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Encabezado de las notas */
+.note-header {
+  font-weight: 700; /* Negrita */
+  padding-bottom: 10px; /* Espaciado inferior */
+  border-bottom: 1px solid #dee2e6; /* Línea divisoria */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+  .boton {
+    padding: 10px 20px; /* Ajuste de espaciado interno */
+    font-size: 0.9rem; /* Reducción de tamaño de fuente */
+  }
+}

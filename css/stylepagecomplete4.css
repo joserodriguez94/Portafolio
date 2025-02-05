@@ -1,0 +1,271 @@
+/* Filtro para cambiar el color de una imagen a blanco */
+.icon-img-colorblanco {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(2%)
+    hue-rotate(306deg) brightness(106%) contrast(100%);
+}
+
+/* Fondo azul para botones */
+.bg-boton {
+  background: #007bff;
+}
+
+/* Contenedor principal del calendario */
+.calendar-container {
+  color: white; /* Color del texto */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  width: 100%; /* Ancho completo */
+  margin: auto; /* Centrado */
+}
+
+/* Encabezado del calendario */
+.calendar-header {
+  display: flex; /* Flexbox para alinear elementos */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Centrado vertical */
+  margin-bottom: 10px; /* Margen inferior */
+  background-color: #007bff; /* Fondo azul */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Selector de mes en el encabezado del calendario */
+.calendar-header select {
+  background-color: #007bff; /* Fondo azul */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Cuerpo del calendario */
+.calendar-body {
+  display: grid; /* Uso de grid para organizar los días */
+  grid-template-columns: repeat(7, 1fr); /* 7 columnas de igual tamaño */
+  text-align: center; /* Texto centrado */
+  background-color: #007bff; /* Fondo azul */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Estilos para cada día en el calendario */
+.calendar-body div {
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Estilo para el día seleccionado */
+.calendar-body .selected {
+  background-color: #f8f8f8; /* Fondo gris claro */
+  border-radius: 10%; /* Bordes redondeados */
+  color: #007bff; /* Color del texto azul */
+}
+
+/* Efecto hover para los días del calendario */
+.calendar-body div:hover {
+  cursor: pointer; /* Cambia el cursor a pointer */
+  background-color: #f8f8f8; /* Fondo gris claro */
+  border-radius: 10%; /* Bordes redondeados */
+  color: #007bff; /* Color del texto azul */
+}
+
+/* Estilos para el selector de mes */
+.selectmes {
+  -webkit-appearance: none; /* Elimina el estilo por defecto en WebKit */
+  -moz-appearance: none; /* Elimina el estilo por defecto en Mozilla */
+  -ms-appearance: none; /* Elimina el estilo por defecto en IE */
+  appearance: none; /* Elimina el estilo por defecto */
+  outline: 0; /* Sin contorno */
+  box-shadow: none; /* Sin sombra */
+  flex: 1; /* Ocupa el espacio disponible */
+  color: #ffffff; /* Color del texto blanco */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Contenedor del selector de mes */
+.selectmes {
+  position: relative; /* Posición relativa */
+  display: flex; /* Flexbox para alinear elementos */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  line-height: 32px; /* Altura de línea */
+  overflow: hidden; /* Oculta el desbordamiento */
+  border-radius: 0.25em; /* Bordes redondeados */
+}
+
+/* Flecha hacia abajo en el selector de mes */
+.selectmes::after {
+  content: "\25BC"; /* Símbolo de flecha hacia abajo */
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Alineado arriba */
+  right: 4px; /* Alineado a la derecha */
+  padding: 0px; /* Sin espaciado */
+  pointer-events: none; /* Ignora eventos de ratón */
+  transition: 0.25s all ease; /* Transición suave */
+}
+
+/* Estilos generales para selectores */
+select {
+  -webkit-appearance: none; /* Elimina el estilo por defecto en WebKit */
+  -moz-appearance: none; /* Elimina el estilo por defecto en Mozilla */
+  -ms-appearance: none; /* Elimina el estilo por defecto en IE */
+  appearance: none; /* Elimina el estilo por defecto */
+  outline: 0; /* Sin contorno */
+  box-shadow: none; /* Sin sombra */
+  border: 0 !important; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Estilos para el selector de año */
+.selectyear {
+  -webkit-appearance: none; /* Elimina el estilo por defecto en WebKit */
+  -moz-appearance: none; /* Elimina el estilo por defecto en Mozilla */
+  -ms-appearance: none; /* Elimina el estilo por defecto en IE */
+  appearance: none; /* Elimina el estilo por defecto */
+  outline: 0; /* Sin contorno */
+  box-shadow: none; /* Sin sombra */
+  flex: 1; /* Ocupa el espacio disponible */
+  color: #ffffff; /* Color del texto blanco */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Contenedor del selector de año */
+.selectyear {
+  position: relative; /* Posición relativa */
+  display: flex; /* Flexbox para alinear elementos */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  line-height: 32px; /* Altura de línea */
+  overflow: hidden; /* Oculta el desbordamiento */
+  border-radius: 0.25em; /* Bordes redondeados */
+}
+
+/* Flecha hacia abajo en el selector de año */
+.selectyear::after {
+  content: "\25BC"; /* Símbolo de flecha hacia abajo */
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Alineado arriba */
+  right: 4px; /* Alineado a la derecha */
+  padding: 0px; /* Sin espaciado */
+  pointer-events: none; /* Ignora eventos de ratón */
+  transition: 0.25s all ease; /* Transición suave */
+}
+
+/* Estilos para inputs de tipo fecha */
+input[type="date"] {
+  font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Estilos para íconos */
+.icon {
+  position: relative; /* Posición relativa */
+  color: #ffffff; /* Color del texto blanco */
+  font-size: 20px; /* Tamaño de fuente */
+  line-height: 31px; /* Altura de línea */
+  display: flex; /* Flexbox para alinear elementos */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Flecha hacia abajo en íconos */
+.icon::after {
+  content: "\25BC"; /* Símbolo de flecha hacia abajo */
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Alineado arriba */
+  right: 7px; /* Alineado a la derecha */
+  padding: 0px; /* Sin espaciado */
+  pointer-events: none; /* Ignora eventos de ratón */
+  transition: 0.25s all ease; /* Transición suave */
+}
+
+/* Ocultar el indicador de selección de fecha en WebKit */
+.icontranspare::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* Estilos para inputs transparentes */
+.icontranspare,
+.icontranspare:focus {
+  background: rgba(0, 0, 0, 0); /* Fondo transparente */
+}
+
+/* Ocultar el indicador de selección de fecha y hora en WebKit */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer; /* Cambia el cursor a pointer */
+  color: transparent; /* Color transparente */
+}
+
+/* Estilos para botones */
+.button {
+  margin: 5px; /* Margen externo */
+  font-size: 17px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  transition: background-color 0.15s ease; /* Transición suave */
+  background-color: #e2e3e5; /* Fondo gris claro */
+}
+
+/* Estilos para botones inactivos */
+.button.inactive {
+  background-color: #e2e3e5; /* Fondo gris claro */
+  color: black; /* Color del texto negro */
+}
+
+/* Estilos para botones activos */
+.button.active {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilos para botones secundarios */
+.button2 {
+  margin: 5px; /* Margen externo */
+  font-size: 17px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  transition: background-color 0.15s ease; /* Transición suave */
+  background-color: #e2e3e5; /* Fondo gris claro */
+}
+
+/* Estilos para botones secundarios inactivos */
+.button2.inactive2 {
+  background-color: #e2e3e5; /* Fondo gris claro */
+  color: black; /* Color del texto negro */
+}
+
+/* Estilos para botones secundarios activos */
+.button2.active2 {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilos para el bloque contador con borde inferior */
+.borderabajodebloquecontador {
+  width: 50px; /* Ancho fijo */
+  border-bottom: 3px solid #007bff; /* Borde inferior azul */
+  text-align: center; /* Texto centrado */
+  font-size: 18px; /* Tamaño de fuente */
+  margin: 0 10px; /* Margen externo */
+}
+
+/* Filtro para cambiar el color de un ícono a azul */
+.iconocolor {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(2982%)
+    hue-rotate(201deg) brightness(106%) contrast(106%);
+}
+
+/* Filtro para cambiar el color de un ícono a blanco cuando el botón está activo */
+.active2 .iconocolor {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(93%) saturate(26%)
+    hue-rotate(56deg) brightness(104%) contrast(100%);
+}
+
+/* Estilos para el bloque contador con borde inferior */
+.borderabajodebloquecontador {
+  width: 35px; /* Ancho fijo */
+  border-bottom: 3px solid #007bff; /* Borde inferior azul */
+}
+
+/* Estilos para textareas */
+textarea {
+  resize: none; /* Evita que el usuario redimensione el área */
+  max-width: 100%; /* Asegura que no se desborde en pantallas pequeñas */
+  min-width: 100%; /* Se asegura de ocupar el ancho disponible */
+}

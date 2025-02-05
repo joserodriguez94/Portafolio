@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Jose</title>
+  
+  <!-- Enlaces a hojas de estilo -->
+  <link href="css/styledepaneldenavegacion0.4.css" rel="stylesheet">
+  <link href="css/styledebotonesdenavegacion.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <!-- Primer Dropdown -->
+    <div class="dropdown-1">
+      <div class="desplegable">
+        <button class="boton-desplegable">
+          Portfolio José
+          <span class="flecha">▼</span>
+        </button>
+        <div class="contenido-desplegable">
+          <a href="#">Option A</a>
+          <a href="#">Option B</a>
+          <a href="#">Option C</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor de búsqueda -->
+    <div class="search-container">
+      <div>
+        <input id="search-input" type="text" placeholder="Search...">
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Segundo Dropdown con imagen -->
+    <div class="dropdown-2">
+      <div class="desplegable">
+        <div>
+          <button class="boton-desplegable desplegable-end boton-desplegable-foto">
+            <img class="img-rounded margin-right" src="https://github.com/mdo.png" alt="mdo" width="32" height="32">
+            <span class="flecha">▼</span>
+          </button>
+          <div class="contenido-desplegable contenido-left">
+            <a href="#">Option A</a>
+            <a href="#">Option B</a>
+            <a href="#">Option C</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaciadores -->
+  <br>
+  <br>
+
+
+  <!-- Sección: Botones de navegación -->
+  <div>
+    <div class="navegacion-botones">
+      <div>
+        <div class="display-flex-navegation">
+          <a class="boton boton-anterior" href="pagesimplenav0.3.html">Anterior barra de navegación</a>          
+          <a class="boton boton-siguiente" href="pagesimplenav0.5.html">Siguiente barra de navegación</a>
+        </div>
+
+        <div class="display-flex-navegation">
+          <a class="boton boton-portfolio" href="pagehomeporfoliojose.html#homemenusimple">Portfolio Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para la funcionalidad del menú -->
+  <script src="js/scriptnavegacion0.4.js"></script>
+</body>
+
+</html>

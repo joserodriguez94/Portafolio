@@ -1,0 +1,82 @@
+/* Estilos para el botón de cierre en el encabezado del modal */
+.modal-header .btn-close {
+  filter: invert(1); /* Invierte el color del botón de cierre para que sea blanco */
+}
+
+/* Efecto al pasar el mouse sobre el botón de cierre */
+.modal-header .btn-close:hover {
+  filter: invert(1.2); /* Aumenta el contraste al pasar el mouse */
+}
+
+/* Estilos para la tabla */
+.table {
+  overflow: hidden; /* Oculta el contenido que sobresale */
+  padding-top: 7px; /* Relleno superior */
+}
+
+/* Estilos para los botones en el wrapper de DataTables */
+.dataTables_wrapper .btn {
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para el botón con borde primario en el wrapper de DataTables */
+.dataTables_wrapper .btn-outline-primary {
+  color: #007bff; /* Color azul */
+  border-color: #007bff; /* Borde azul */
+}
+
+/* Efecto al pasar el mouse sobre el botón con borde primario */
+.dataTables_wrapper .btn-outline-primary:hover {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Texto blanco */
+}
+
+/* Estilos para el campo de filtro en el wrapper de DataTables */
+.dataTables_wrapper .dataTables_filter input {
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 5px 10px; /* Relleno interno */
+}
+
+/* Efecto al pasar el mouse sobre las filas de la tabla */
+.table-hover tbody tr:hover {
+  background-color: #f5f3f1; /* Fondo gris claro */
+}
+
+/* Estilos para los controles de paginación */
+.pagination-controls {
+  margin-top: 15px; /* Margen superior */
+  display: flex; /* Diseño flexible */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+  background-color: #28a745; /* Fondo verde */
+  color: white; /* Texto blanco */
+  border-top-left-radius: 15px; /* Bordes redondeados en la parte superior */
+  border-top-right-radius: 15px;
+}
+
+/* Estilos para el pie del modal */
+.modal-footer {
+  border-top: 1px solid #ddd; /* Borde superior gris */
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+  /* Fondo con gradiente e imagen */
+  background: linear-gradient(rgba(197, 194, 194, 0.1), rgba(197, 194, 194, 0.1)), url(click2.jpg);
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  min-height: 100vh; /* Altura mínima de la ventana */
+  max-width: 100%; /* Ancho máximo */
+  color: white; /* Texto blanco */
+  position: relative; /* Posición relativa */
+}

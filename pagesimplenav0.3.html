@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Jose</title>
+
+  <!-- Enlaces a hojas de estilo -->
+  <link href="css/styledepaneldenavegacion0.3.css" rel="stylesheet">
+  <link href="css/styledebotonesdenavegacion.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <!-- Logo del sitio -->
+    <div class="logo">Portfolio José</div>
+
+    <!-- Botón para el menú hamburguesa en dispositivos móviles -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Enlaces de navegación -->
+    <ul class="nav-links" id="nav-links">
+      <div class="navdisplay">
+        <!-- Enlace principal -->
+        <li>
+          <a href="#">Home</a>
+        </li>
+
+        <!-- Primer menú desplegable: Servicios -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">
+            Services
+            <span class="arrow">&#9662;</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+        </li>
+
+        <!-- Segundo menú desplegable: Productos -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">
+            Products
+            <span class="arrow">&#9662;</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Software</a></li>
+            <li><a href="#">Hardware</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+
+        <!-- Tercer menú desplegable: Información -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">
+            About
+            <span class="arrow">&#9662;</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </li>
+
+        <!-- Enlace a la página de contacto -->
+        <li>
+          <a href="paginadeformulario0.1.html">Contact</a>
+        </li>
+      </div>
+
+      <div class="navdisolay2">
+        <!-- Barra de búsqueda -->
+        <li class="search-container">
+          <input class="search-input" id="search-input" type="search" placeholder="Search...">
+          <button class="search-btn" id="search-button">Search</button>
+        </li>
+        <!-- Espacio para los resultados de la búsqueda -->
+        <div class="paddingresult" id="result"></div>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Espaciadores -->
+  <br>
+  <br>
+
+  <!-- Sección: Botones de navegación -->
+  <div>
+    <div class="navegacion-botones">
+      <div>
+        <div class="display-flex-navegation">
+          <!-- Enlace a la versión anterior del menú -->
+          <a class="boton boton-anterior" href="pagesimplenav0.2.html">Anterior barra de navegación</a>
+          <!-- Enlace a la siguiente versión del menú -->
+          <a class="boton boton-siguiente" href="pagesimplenav0.4.html">Siguiente barra de navegación</a>
+        </div>
+
+        <div class="display-flex-navegation">
+          <!-- Enlace a la página principal del portafolio -->
+          <a class="boton boton-portfolio" href="pagehomeporfoliojose.html#homemenusimple">Portfolio Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para la funcionalidad del menú -->
+  <script src="js/scriptnavegacion0.3.js"></script>
+</body>
+
+</html>

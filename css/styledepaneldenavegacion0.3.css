@@ -1,0 +1,191 @@
+/* Reinicio de márgenes, padding y box-sizing */
+* {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+    box-sizing: border-box; /* Incluye bordes y padding en el ancho/alto de los elementos */
+}
+
+/* Estilo global para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Define la fuente general */
+}
+
+/* Barra de navegación principal */
+.navbar {
+    display: flex; /* Activa el modelo de caja flexible */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 1rem; /* Espaciado interno uniforme */
+    background-color: #f8f9fa; /* Fondo */
+    color: black; /* Color del texto */
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+}
+
+/* Logo dentro de la barra de navegación */
+.logo {
+    font-size: 1.5rem; /* Tamaño de fuente del logo */
+    width: 90%; /* Ancho relativo del logo */
+}
+
+/* Contenedor de enlaces de navegación */
+.nav-links {
+    position: fixed; /* Fija la posición en la ventana */
+    top: 60px; /* Distancia desde la parte superior */
+    right: -100%; /* Inicialmente fuera de la pantalla */
+    flex-direction: column; /* Organiza los enlaces en columna */
+    background-color: #f8f9fa; /* Fondo */
+    max-width: 300px; /* Ancho máximo del menú */
+    height: 100vh; /* Altura completa de la ventana */
+    text-align: left; /* Alineación del texto a la izquierda */
+    transition: right 0.8s ease-in-out; /* Animación suave al desplegar */
+}
+
+/* Estado activo de los enlaces de navegación */
+.nav-links.active {
+    right: 0; /* Muestra el menú al colocarlo en su lugar */
+}
+
+/* Elementos de lista dentro de los enlaces */
+.nav-links li {
+    list-style: none; /* Elimina viñetas predeterminadas */
+    padding: 15px 5px 0; /* Espaciado interno para cada enlace */
+}
+
+/* Enlaces dentro del menú */
+.nav-links a {
+    color: black; /* Color del texto */
+    text-decoration: none; /* Elimina subrayados */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 0.5rem; /* Espaciado interno del enlace */
+    margin-left: 5px; /* Separación del margen izquierdo */
+}
+
+/* Botón de menú tipo hamburguesa */
+.burger {
+    display: flex; /* Muestra las líneas como elementos flexibles */
+    flex-direction: column; /* Organiza las líneas en columna */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.burger span {
+    height: 3px; /* Altura de cada línea */
+    width: 28px; /* Ancho de cada línea */
+    background-color: black; /* Color de las líneas */
+    margin: 4px; /* Espaciado entre líneas */
+    transition: 0.3s; /* Animación al interactuar */
+}
+
+/* Animaciones del botón hamburguesa en estado activo */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(11px, 6px); /* Gira la primera línea */
+}
+.burger.active span:nth-child(2) {
+    opacity: 0; /* Oculta la segunda línea */
+}
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(9px, -5px); /* Gira la tercera línea */
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    display: none; /* Oculta el menú por defecto */
+    background-color: #ffffff; /* Fondo */
+    list-style: none; /* Sin viñetas */
+    padding: 0.5rem 0; /* Espaciado interno vertical */
+    max-width: 300px; /* Ancho mínimo */
+    position: static; /* No flotante */
+}
+
+/* Elementos dentro del menú desplegable */
+.dropdown-menu li {
+    padding: 0.5rem; /* Espaciado interno uniforme */
+}
+
+/* Enlaces dentro del menú desplegable */
+.dropdown-menu a {
+    color: black; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 0.9rem; /* Tamaño de fuente menor */
+}
+
+/* Estado activo del menú desplegable */
+.dropdown.active .dropdown-menu {
+    display: block; /* Muestra el menú al activar */
+}
+
+/* Contenedor de la barra de búsqueda */
+.search-container {
+    display: flex; /* Activa el modelo flexible */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* Permite saltar de línea si es necesario */
+}
+
+/* Campo de entrada del buscador */
+#search-input {
+    padding: 0.5rem; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-right: 0.5rem; /* Separación del botón */
+    width: 200px; /* Ancho fijo */
+    margin-bottom: 5px; /* Margen inferior */
+}
+
+/* Botón de búsqueda */
+.search-btn {
+    padding: 0.5rem; /* Espaciado interno */
+    background-color: #198754; /* Color de fondo verde */
+    color: #ffffff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor */
+    margin-bottom: 5px; /* Margen inferior */
+}
+
+.search-btn:hover {
+    background-color: #6f6d74; /* Fondo más oscuro al pasar el cursor */
+}
+
+/* Estilo para listas o resultados */
+.paddingresult {
+    list-style: none; /* Sin viñetas */
+    padding: 15px 5px 0; /* Espaciado interno */
+}
+
+/* Contenedores generales */
+.nav-container {
+    display: flex; /* Modelo flexible */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 8px; /* Espaciado interno uniforme */
+}
+.align-center {
+    display: flex; /* Activa el modelo flexible */
+    justify-content: center; /* Centra los elementos */
+}
+
+/* Botones generales */
+.button {
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    margin-right: 10px; /* Margen derecho */
+    display: inline-block; /* Modelo en línea-bloque */
+    text-align: center; /* Centra el texto */
+}
+
+/* Botón deshabilitado */
+.disabled {
+    background-color: #6c757d; /* Fondo gris */
+    color: white; /* Texto blanco */
+}
+
+/* Variaciones de diseño de navegación */
+.navdisplay,
+.navdisolay2 {
+    flex-direction: column; /* Organización en columna */
+    justify-content: start; /* Alineación al inicio */
+    align-items: start; /* Alineación inicial de los elementos */
+}
+
+.navdisolay2 {
+    padding: 10px; /* Espaciado interno adicional */
+}

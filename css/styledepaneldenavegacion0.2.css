@@ -1,0 +1,307 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    /* Fuente base para el contenido */
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    padding: 0;
+    /* Elimina relleno predeterminado */
+}
+
+
+/* Barra de navegación */
+
+.navbar {
+    display: flex;
+    /* Flexbox para estructura */
+    flex-direction: column;
+    /* Elementos en columna */
+    background-color: #f8f9fa;
+    /* Fondo claro */
+    padding: 0.5rem 1rem;
+    /* Eado interno */
+    border-bottom: 1px solid #ddd;
+    /* Borde inferior */
+}
+
+
+/* Contenedor dentro de la barra de navegación */
+
+.container {
+    display: flex;
+    /* Flexbox para organización */
+    align-items: center;
+    /* Alineación vertical centrada */
+    justify-content: space-between;
+    /* Espaciado entre elementos */
+    flex-wrap: wrap;
+    /* Permite que los elementos salten a una nueva línea si es necesario */
+}
+
+
+/* Marca o logo de la barra de navegación */
+
+.navbar-brand {
+    font-weight: bold;
+    /* Negrita para destacar */
+    font-size: 1.2rem;
+    /* Tamaño del texto */
+    text-decoration: none;
+    /* Sin subrayado */
+    color: #000;
+    /* Color negro */
+    margin-right: 1rem;
+    /* Espaciado a la derecha */
+}
+
+
+/* Botón de menú desplegable (visible solo en pantallas pequeñas) */
+
+.navbar-toggler {
+    display: none;
+    /* Ocultado por defecto */
+    background: none;
+    /* Sin fondo */
+    border: none;
+    /* Sin bordes */
+    font-size: 1.5rem;
+    /* Tamaño del ícono */
+    cursor: pointer;
+    /* Cursor de mano al pasar */
+}
+
+
+/* Menú principal de navegación */
+
+.navbar-menu {
+    display: flex;
+    /* Flexbox para los elementos */
+    flex-direction: row;
+    /* Elementos en fila */
+    align-items: center;
+    /* Alineación vertical centrada */
+    flex-grow: 1;
+    /* Ocupa el espacio restante */
+    order: 1;
+    /* Posición en el flujo del flexbox */
+}
+
+
+/* Lista de elementos de navegación */
+
+.navbar-nav {
+    display: flex;
+    /* Flexbox para organización */
+    list-style: none;
+    /* Sin estilo de lista */
+    margin: 0;
+    /* Sin márgenes */
+    padding: 0;
+    /* Sin relleno */
+    order: 2;
+    /* Posición en el flujo */
+}
+
+
+/* Elementos individuales dentro del menú */
+
+.navbar-nav li {
+    margin-right: 1rem;
+    /* Espaciado entre elementos */
+    padding: 5px;
+    /* Espaciado interno */
+}
+
+
+/* Enlaces dentro del menú */
+
+.nav-link {
+    text-decoration: none;
+    /* Sin subrayado */
+    color: #000;
+    /* Color negro */
+    padding: 0.5rem 0;
+    /* Espaciado interno */
+}
+
+
+/* Efecto al pasar el cursor sobre los enlaces */
+
+.nav-link:hover {
+    color: #007bff;
+    /* Azul al pasar el cursor */
+}
+
+
+/* Estilo para menús desplegables */
+
+.dropdown {
+    position: relative;
+    /* Posicionamiento relativo para el menú desplegable */
+}
+
+
+/* Menú desplegable */
+
+.dropdown-menu {
+    display: none;
+    /* Oculto por defecto */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 100%;
+    /* Justo debajo del elemento padre */
+    left: 0;
+    /* Alineado a la izquierda */
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 1px solid #ddd;
+    /* Borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+    list-style: none;
+    /* Sin estilo de lista */
+    padding: 0.5rem 0;
+    /* Espaciado interno */
+    margin: 0;
+    /* Sin margen */
+    width: 230px;
+    /* Ancho fijo */
+}
+
+
+/* Menú desplegable activo */
+
+.dropdown.open .dropdown-menu {
+    display: block;
+    /* Mostrar el menú */
+}
+
+
+/* Elementos dentro del menú desplegable */
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    /* Espaciado interno */
+    text-decoration: none;
+    /* Sin subrayado */
+    color: #000;
+    /* Color negro */
+}
+
+
+/* Efecto al pasar el cursor sobre los elementos del menú desplegable */
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    /* Fondo claro al pasar el cursor */
+}
+
+
+/* Área de búsqueda */
+
+.search {
+    flex-shrink: 0;
+    /* Evita que se reduzca */
+    order: 3;
+    /* Posición en el flujo */
+}
+
+
+/* Input de búsqueda */
+
+.search-input {
+    padding: 0.5rem;
+    /* Espaciado interno */
+    border: 1px solid #ddd;
+    /* Borde */
+    border-radius: 4px 0 0 4px;
+    /* Bordes redondeados en la izquierda */
+}
+
+
+/* Botón de búsqueda */
+
+.search-button {
+    padding: 0.5rem 1rem;
+    /* Espaciado interno */
+    background-color: #28a745;
+    /* Fondo verde */
+    color: #fff;
+    /* Texto blanco */
+    border: none;
+    /* Sin borde */
+    border-radius: 0 4px 4px 0;
+    /* Bordes redondeados en la derecha */
+    cursor: pointer;
+    /* Cursor de mano */
+}
+
+
+/* Efecto al pasar el cursor sobre el botón de búsqueda */
+
+.search-button:hover {
+    background-color: #218838;
+    /* Verde más oscuro */
+}
+
+
+/* ---------- Media Query ---------- */
+
+
+/* Estilos para dispositivos medianos */
+
+@media (min-width: 992px) {
+    .navbar-menu {
+        display: flex !important;
+        /* Mostrar el menú */
+        justify-content: flex-start;
+        /* Alinear elementos a la izquierda */
+    }
+    .search {
+        margin-left: auto;
+        /* Mover la búsqueda a la derecha */
+        order: 3;
+        /* Posición en el flujo */
+    }
+}
+
+
+/* Estilos para pantallas pequeñas (hasta 992 px) */
+
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block;
+        /* Mostrar el botón del menú */
+    }
+    .navbar-menu {
+        display: none;
+        /* Ocultar el menú por defecto */
+        flex-direction: column;
+        /* Elementos en columna */
+        align-items: flex-start;
+        /* Alineación a la izquierda */
+        width: 100%;
+        /* Ocupa todo el ancho */
+    }
+    .navbar-menu.show {
+        display: flex;
+        /* Mostrar el menú al activarlo */
+    }
+    .navbar-nav {
+        flex-direction: column;
+        /* Elementos en columna */
+        align-items: flex-start;
+        /* Alineación a la izquierda */
+    }
+    .search {
+        width: 100%;
+        /* Ocupa todo el ancho */
+        margin-top: 1rem;
+        /* Espaciado superior */
+    }
+    .search-input {
+        width: calc(100% - 80px);
+        /* Ajusta el ancho del input */
+    }
+}

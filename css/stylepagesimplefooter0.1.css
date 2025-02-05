@@ -1,0 +1,146 @@
+/* ---------- Estilos globales ---------- */
+/* Reinicia los márgenes, rellenos y configura el modelo de caja para todos los elementos */
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina relleno predeterminado */
+  box-sizing: border-box; /* Incluye bordes y padding en el ancho/alto total */
+}
+
+/* ---------- Contenedor principal ---------- */
+/* Define un contenedor centralizado y responsivo */
+.container {
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  max-width: 1200px; /* Ancho máximo de 1200px */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 7px; /* Espaciado interno */
+}
+
+/* ---------- Pie de página ---------- */
+/* Contenedor principal del footer */
+.footer {
+  display: flex; /* Diseño flexible */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas */
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: center; /* Alinea verticalmente al centro */
+  padding: 1rem 0; /* Espaciado interno vertical */
+  border-top: 1px solid #ddd; /* Línea superior para separar */
+}
+
+/* Texto en el pie de página */
+.footer-text {
+  color: #6c757d; /* Color gris claro */
+  flex: 1 1 100%; /* Ocupa toda la fila en pantallas pequeñas */
+  text-align: center; /* Centrado horizontal */
+  margin: 5px; /* Espaciado externo */
+}
+
+/* Contenedor del logo en el footer */
+.footer-logo {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  flex: 1 1 100%; /* Ocupa toda la fila en pantallas pequeñas */
+  margin: 5px; /* Espaciado externo */
+}
+
+/* Estilo para la imagen del logo */
+.logo-img {
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 5px; /* Espaciado externo */
+}
+
+/* ---------- Navegación del pie de página ---------- */
+/* Lista de enlaces en el footer */
+.footer-nav {
+  list-style: none; /* Elimina viñetas */
+  display: flex; /* Diseño flexible en línea */
+  gap: 1rem; /* Espaciado entre elementos */
+  flex: 1 1 100%; /* Ocupa toda la fila en pantallas pequeñas */
+  justify-content: center; /* Centrado horizontal */
+  margin: 5px; /* Espaciado externo */
+}
+
+/* Estilo para los enlaces de la navegación */
+.nav-link {
+  color: #6c757d; /* Color gris claro */
+  text-decoration: none; /* Sin subrayado */
+  padding: 0.5rem; /* Espaciado interno */
+  font-size: 0.9rem; /* Tamaño de fuente moderado */
+}
+
+/* Efecto hover en los enlaces */
+.nav-link:hover {
+  color: #000; /* Cambia el color a negro */
+}
+
+/* Contenedor adicional para centrar elementos */
+.nav-container {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+  padding: 8px; /* Espaciado interno */
+}
+
+/* Clase para centrar contenido */
+.align-center {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* ---------- Botones ---------- */
+/* Estilo general para los botones */
+.button {
+  padding: 10px 20px; /* Espaciado interno */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  margin-right: 10px; /* Espaciado a la derecha */
+  display: inline-block; /* Botón como bloque en línea */
+  text-align: center; /* Texto centrado */
+}
+
+/* Botón principal con fondo azul */
+.primary-button {
+  background-color: #007bff; /* Azul primario */
+  color: white; /* Texto blanco */
+}
+
+/* Botón secundario con fondo gris */
+.secondary-button {
+  background-color: #6c757d; /* Gris */
+  color: white; /* Texto blanco */
+}
+
+/* Efecto hover en los botones */
+.button:hover {
+  opacity: 0.9; /* Reduce la opacidad ligeramente */
+}
+
+/* Botón deshabilitado */
+.disabled {
+  background-color: #6c757d; /* Gris */
+  color: white; /* Texto blanco */
+}
+
+/* ---------- Media Query ---------- */
+/* Ajustes para pantallas grandes (1200px) en adelante */
+@media (min-width: 1200px) {
+  /* Ajusta el texto del pie de página */
+  .footer-text {
+    flex: 1 1 33%; /* Ocupa un tercio del espacio */
+    text-align: left; /* Alineación izquierda */
+    margin: 0px; /* Sin espaciado externo */
+  }
+
+  /* Ajusta el contenedor del logo */
+  .footer-logo {
+    flex: 1 1 33%; /* Ocupa un tercio del espacio */
+    margin: 0px; /* Sin espaciado externo */
+  }
+
+  /* Ajusta la lista de navegación */
+  .footer-nav {
+    flex: 1 1 33%; /* Ocupa un tercio del espacio */
+    justify-content: flex-end; /* Alineación al final */
+    margin: 0px; /* Sin espaciado externo */
+  }
+}

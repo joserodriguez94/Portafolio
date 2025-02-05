@@ -1,0 +1,212 @@
+/* Estilos adicionales */
+
+/* Estilos para la sección de texto */
+.text-section {
+  background-color: #e1e1e1; /* Fondo gris claro */
+  padding: 2rem; /* Espaciado interno */
+}
+
+/* Estilos para el título dentro de la sección de texto */
+.text-section h1 {
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para los párrafos dentro de la sección de texto */
+.text-section p {
+  font-size: 1.25rem; /* Tamaño de fuente mediano */
+  color: #666; /* Color de texto gris oscuro */
+}
+
+/* Estilos para las imágenes dentro de la sección de imágenes */
+.image-section img {
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Contenedor para los interruptores (switches) */
+.switch-container {
+  display: flex; /* Flexbox para alinear elementos */
+  gap: 10px; /* Espacio entre elementos */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para el interruptor (switch) */
+.switch {
+  position: relative; /* Posición relativa para contener elementos absolutos */
+  display: inline-block; /* Mostrar en línea */
+  width: 115px; /* Ancho fijo */
+  height: 34px; /* Altura fija */
+}
+
+/* Ocultar el input del interruptor */
+.switch input {
+  opacity: 0; /* Hacer el input transparente */
+  width: 0; /* Ancho cero */
+  height: 0; /* Altura cero */
+}
+
+/* Estilos para el deslizador (slider) del interruptor */
+.slider {
+  position: absolute; /* Posición absoluta para superponer */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  top: 0; /* Alineado arriba */
+  left: 0; /* Alineado a la izquierda */
+  right: 0; /* Alineado a la derecha */
+  bottom: 0; /* Alineado abajo */
+  background-color: #ccc; /* Fondo gris */
+  transition: 0.4s; /* Transición suave */
+  display: flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-size: 14px; /* Tamaño de fuente */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Estilos para el círculo dentro del deslizador */
+.slider:before {
+  position: absolute; /* Posición absoluta para superponer */
+  content: ""; /* Contenido vacío */
+  height: 26px; /* Altura fija */
+  width: 26px; /* Ancho fijo */
+  left: 4px; /* Distancia desde la izquierda */
+  bottom: 4px; /* Distancia desde abajo */
+  background-color: white; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: 0.4s; /* Transición suave */
+}
+
+/* Cambiar el fondo del deslizador cuando el interruptor está activado */
+input:checked + .slider {
+  background-color: #5f19ff; /* Fondo morado */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Mover el círculo dentro del deslizador cuando el interruptor está activado */
+input:checked + .slider:before {
+  transform: translateX(80px); /* Desplazamiento horizontal */
+}
+
+/* Estilos para un deslizador redondo */
+.slider.round {
+  border-radius: 34px; /* Bordes completamente redondeados */
+}
+
+/* Estilos para el círculo dentro de un deslizador redondo */
+.slider.round:before {
+  border-radius: 50%; /* Círculo perfecto */
+}
+
+/* Estilos para la etiqueta dentro del interruptor */
+.label {
+  position: absolute; /* Posición absoluta para superponer */
+  width: 100%; /* Ancho completo */
+  text-align: center; /* Texto centrado */
+  pointer-events: none; /* Ignorar eventos de ratón */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilos para las imágenes dentro de las tarjetas de publicaciones */
+#posts .card img {
+  width: 100%; /* Ancho completo */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Ajustar la imagen al contenedor */
+}
+
+/* Estilos para las notificaciones */
+.notification {
+  position: fixed; /* Posición fija en la pantalla */
+  bottom: 1rem; /* Distancia desde abajo */
+  right: 1rem; /* Distancia desde la derecha */
+  background: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+  color: white; /* Color del texto blanco */
+  padding: 0.8rem 1.2rem; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  z-index: 1000; /* Capa superior */
+  display: none; /* Ocultar por defecto */
+}
+
+/* Contenedor para las publicaciones */
+#posts {
+  display: flex; /* Flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan */
+  gap: 1rem; /* Espacio entre tarjetas */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Estilos para las tarjetas de publicaciones */
+#posts .card {
+  flex: 1 1 calc(33.333% - 1rem); /* Flexibilidad para 3 tarjetas por fila */
+  max-width: calc(33.333% - 1rem); /* Ancho máximo para 3 tarjetas por fila */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Transición suave al hacer hover */
+}
+
+/* Efecto hover para las tarjetas de publicaciones */
+#posts .card:hover {
+  transform: scale(1.05); /* Escalar ligeramente la tarjeta */
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 992px */
+@media (max-width: 992px) {
+  #posts .card {
+    flex: 1 1 calc(50% - 1rem); /* 2 tarjetas por fila en pantallas medianas */
+    max-width: calc(50% - 1rem); /* Ancho máximo para 2 tarjetas por fila */
+  }
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  #posts .card {
+    flex: 1 1 100%; /* 1 tarjeta por fila en pantallas pequeñas */
+    max-width: 100%; /* Ancho completo */
+  }
+}
+
+/* Estilos para el botón de "me gusta" */
+.like-button {
+  cursor: pointer; /* Cambia el cursor a pointer */
+  display: inline-flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Estilos para el ícono de corazón */
+.heart {
+  font-size: 24px; /* Tamaño de fuente grande */
+  transition: color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+/* Estilos para el ícono de corazón inactivo */
+.heart.inactive {
+  color: grey; /* Color gris */
+}
+
+/* Estilos para el ícono de corazón activo */
+.heart.active {
+  color: red; /* Color rojo */
+}
+
+/* Estilos para texto truncado con puntos suspensivos */
+.truncated-text {
+  overflow: hidden; /* Ocultar el contenido que desborda */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos */
+  white-space: nowrap; /* Evitar el salto de línea */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+/* Estilos para el cuerpo del modal */
+.modal-body {
+  background-color: #f0f8ff; /* Fondo azul claro */
+}
+
+/* Estilos para la descripción dentro del modal */
+.modal-body #modalDescription {
+  max-height: 200px; /* Altura máxima */
+  overflow-y: auto; /* Scroll vertical si es necesario */
+  word-break: break-word; /* Romper palabras largas */
+}

@@ -1,0 +1,66 @@
+/* Estilo general para el cuerpo del documento */
+body {
+  font-family: Arial, sans-serif; /* Fuente por defecto para todo el documento */
+}
+
+/* Botón de descarga */
+.download-btn {
+  color: #fff; /* Color del texto del botón */
+  padding: 12px 24px; /* Espaciado interno del botón */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambio de cursor al pasar sobre el botón */
+  transition: background-color 0.3s, transform 0.2s; /* Animación para cambios de color y escala */
+}
+
+/* Tamaño de imagen */
+.rounded-img {
+  width: 200px; /* Ocupa el ancho del contenedor */
+  height: 200px; /* Asegurar que alto y ancho sean iguales */
+  border-radius: 50%; /* 50% del ancho/alto = círculo */
+}
+
+/* Efectos al pasar el cursor sobre el botón */
+.download-btn:hover {
+  background-color: #9b9b9b; /* Cambio de color de fondo */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Efecto al hacer clic en el botón */
+.download-btn:active {
+  transform: scale(0.98); /* Reduce ligeramente el tamaño */
+}
+
+/* Clase para aplicar un borde superior con un color específico */
+.border-top-color {
+  border-top: 2px solid #0d6efd; /* Borde superior azul */
+}
+
+/* Estilos de tipografía para títulos (h1 a h6) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif; /* Fuente específica para títulos */
+}
+
+/* Estilos de tipografía para la barra de navegación o menú */
+.navbar,
+.menu {
+  font-family: "Montserrat", sans-serif; /* Fuente moderna para navegación */
+}
+
+/* Estilos de tipografía para el pie de página o texto pequeño */
+.footer,
+.small-text {
+  font-family: "Source Sans Pro", sans-serif; /* Fuente legible para texto pequeño */
+}
+
+/* Estilos de tipografía para citas o texto especial */
+.blockquote,
+.special-text {
+  font-family: "Merriweather", serif; /* Fuente elegante para citas o textos destacados */
+}

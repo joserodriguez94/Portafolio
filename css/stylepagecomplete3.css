@@ -1,0 +1,196 @@
+/* Estilos para el botón de cierre en el encabezado del modal */
+.modal-header .btn-close {
+  filter: invert(1); /* Invierte el color del botón de cierre para que sea blanco */
+}
+
+/* Efecto al pasar el mouse sobre el botón de cierre */
+.modal-header .btn-close:hover {
+  filter: invert(1.2); /* Aumenta el contraste al pasar el mouse */
+}
+
+/* Estilos para las tarjetas de plantas */
+.plant-card {
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que sobresale */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+  border: #28a745 solid 3px; /* Borde verde sólido */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta de planta */
+.plant-card:hover {
+  transform: translateY(-5px); /* Mueve la tarjeta hacia arriba */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Aumenta la sombra */
+}
+
+/* Estilos para las imágenes dentro de las tarjetas de plantas */
+.plant-card img {
+  max-height: 200px; /* Altura máxima de la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+  background-color: #28a745; /* Fondo verde */
+  color: white; /* Texto blanco */
+  border-top-left-radius: 15px; /* Bordes redondeados en la parte superior */
+  border-top-right-radius: 15px;
+}
+
+/* Estilos para el pie del modal */
+.modal-footer {
+  border-top: 1px solid #ddd; /* Borde superior gris */
+}
+
+/* Estilos para el botón de detalles */
+.details-btn {
+  background-color: #28a745; /* Fondo verde */
+  color: white; /* Texto blanco */
+  border-radius: 5px; /* Bordes redondeados */
+  width: 100%; /* Ancho completo */
+}
+
+/* Efecto al pasar el mouse sobre el botón de detalles */
+.details-btn:hover {
+  background-color: #218838; /* Fondo verde oscuro */
+  color: #ddd; /* Texto gris claro */
+}
+
+/* Estilos para el título de la tarjeta */
+.card-title {
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos base para los botones de like y dislike */
+.like-btn,
+.dislike-btn {
+  font-size: 18px; /* Tamaño de fuente */
+  transition: transform 0.2s, color 0.3s; /* Transición suave para efectos */
+}
+
+/* Animación al hacer clic en los botones de like y dislike */
+.like-btn.animate,
+.dislike-btn.animate {
+  transform: scale(1.2); /* Escala el botón al hacer clic */
+}
+
+/* Estilo para el botón de like activo */
+.like-btn.active {
+  color: green; /* Color verde */
+}
+
+/* Estilo para el botón de dislike activo */
+.dislike-btn.active {
+  color: red; /* Color rojo */
+}
+
+/* Estilos para el texto principal */
+.lead {
+  text-align: justify; /* Texto justificado */
+  word-spacing: 0.1em; /* Espaciado entre palabras */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  line-height: 1.6; /* Altura de línea */
+  hyphens: auto; /* Guiones automáticos */
+}
+
+/* Estilos para los subtítulos */
+.subtitle {
+  color: #28a745; /* Color verde */
+  text-decoration: underline; /* Subrayado */
+}
+
+/* Estilos para botones con fondo verde */
+.bg-success-btn {
+  background-color: #28a745; /* Fondo verde */
+  color: #fff; /* Texto blanco */
+}
+
+/* Estilos para el encabezado de la tarjeta */
+.card-header {
+  background-color: #28a745; /* Fondo verde */
+  color: #fff; /* Texto blanco */
+}
+
+/* Estilos para la sección de código */
+.code-section {
+  margin-bottom: 30px; /* Margen inferior */
+}
+
+/* Estilos para el título de la sección de código */
+.code-title {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  color: #0d6efd; /* Color azul */
+}
+
+/* Estilos para cada línea de código */
+.code-line {
+  padding: 10px; /* Relleno interno */
+  margin-bottom: 10px; /* Margen inferior */
+  background-color: #e9ecef; /* Fondo gris claro */
+  border-left: 4px solid #0d6efd; /* Borde izquierdo azul */
+}
+
+/* Estilos para la descripción del código */
+.code-desc {
+  margin-top: 5px; /* Margen superior */
+  padding: 10px; /* Relleno interno */
+  background-color: #f8f9fa; /* Fondo gris muy claro */
+  border-left: 4px solid #6c757d; /* Borde izquierdo gris */
+  text-align: justify; /* Texto justificado */
+  word-spacing: 0.1em; /* Espaciado entre palabras */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  line-height: 1.6; /* Altura de línea */
+  hyphens: auto; /* Guiones automáticos */
+}
+
+/* Estilos para la sección de evaluación */
+.evaluation-section {
+  background: #ffffff; /* Fondo blanco */
+  border: 1px solid #dee2e6; /* Borde gris */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Relleno interno */
+  margin-bottom: 20px; /* Margen inferior */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para el título de la sección de evaluación */
+.evaluation-title {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  color: #0d6efd; /* Color azul */
+  margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Estilos para cada punto de evaluación */
+.evaluation-point {
+  padding: 10px; /* Relleno interno */
+  border-left: 4px solid #0d6efd; /* Borde izquierdo azul */
+  background: #e9ecef; /* Fondo gris claro */
+  margin-bottom: 10px; /* Margen inferior */
+  border-radius: 4px; /* Bordes redondeados */
+  text-align: justify; /* Texto justificado */
+  word-spacing: 0.1em; /* Espaciado entre palabras */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  line-height: 1.6; /* Altura de línea */
+  hyphens: auto; /* Guiones automáticos */
+}
+
+/* Estilos para el texto en negrita dentro de los puntos de evaluación */
+.evaluation-point strong {
+  color: #0d6efd; /* Color azul */
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+  /* Fondo con gradiente e imagen */
+  background: linear-gradient(rgba(197, 194, 194, 0.5), rgba(197, 194, 194, 0.5)), url(plant.jpg);
+  background-size: contain; /* Ajusta el tamaño de la imagen */
+  min-height: 100vh; /* Altura mínima de la ventana */
+  max-width: 100%; /* Ancho máximo */
+  color: white; /* Texto blanco */
+  position: relative; /* Posición relativa */
+}

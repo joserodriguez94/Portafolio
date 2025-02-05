@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+   <!-- Enlace a Google Fonts: Fuentes tipográficas modernas y legibles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo personalizadas -->
+  <link href="css/stylepagecomplete5.css" rel="stylesheet">
+  <link href="css/styledepaginahome.css" rel="stylesheet">
+
+  <!-- Título de la página -->
+  <title>Portfolio Jose</title>
+</head>
+
+<body>
+  <!-- Encabezado de la página con barra de navegación -->
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Portfolio Jose</a>
+        <button class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="pagecomplete5.0.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagecomplete5.1.html">Shop Page 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagecomplete5.2.html">Shop Page 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagecomplete5.3.html">Shop Page 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagecomplete5.4.html">Shop Page 4</a>
+            </li>
+          </ul>
+          <!-- Botón para ver el carrito de compras -->
+          <button class="btn btn-outline-light" onclick="viewCart()">
+            View Cart ( <span id="cart-count">0</span>)
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="">
+    <!-- Sección de presentación con fondo y botones de acción -->
+    <div class="position-relative overflow-hidden text-center bg-body-tertiary fondo vh-100 d-flex align-items-center">
+      <div class="px-3 px-xl-0">
+        <div class="col-md-7 p-3 p-lg-4 mx-auto my-5 border colortext-bg">
+          <h1 class="display-3 fw-bold text-shadow">
+            ¡Encuentra el Smartphone Perfecto para Ti!
+          </h1>
+          <h3 class="fw-normal text-muted mb-3 text-shadow">
+            Ofrecemos las mejores marcas y precios insuperables.
+          </h3>
+          <div class="d-flex gap-3 justify-content-around lead fw-normal">
+            <a class="icon-link btn btn-secondary" href="#">
+              Explorar Catálogo
+              <img class="icon-img-colorblanco" src="iconos/note1.svg" alt width="30px">
+            </a>
+            <a class="icon-link btn btn-secondary" href="#">
+              Buy
+              <img class="icon-img-colorblanco" src="iconos/shopping-cart.svg" alt width="30px">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de productos destacados -->
+    <div class="px-2 px-lg-5">
+      <!-- Primera fila de productos: iPhone -->
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 mt-3">
+        <div class="text-bg-dark me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Innovación y Elegancia en tu Bolsillo</h2>
+            <p class="lead">
+              Descubre el diseño elegante y el rendimiento superior de
+              nuestros iPhones. Vive la experiencia iOS con funciones únicas y
+              seguridad incomparable.
+            </p>
+          </div>
+          <div class="bg-body-tertiary shadow-sm mx-auto rounded-top-3">
+            <img class="tamanodephone2 blockimg img-fluid rounded-top-2" src="img/iphone.jpg" alt>
+          </div>
+        </div>
+        <div class="bg-body-tertiary me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 p-3">
+            <h2 class="display-5">iPhone</h2>
+            <p class="lead">
+              Innovación en diseño, cámaras avanzadas y el sistema iOS más
+              fluido del mercado.
+            </p>
+          </div>
+          <div class="shadow-sm mx-auto">
+            <img class="tamanodephone2 blockimg img-fluid" src="img/laptop-iphone.jpg" alt>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda fila de productos: Samsung Galaxy -->
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 mt-4">
+        <div class="text-bg-dark me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 py-3">
+            <h2 class="display-5">El Poder del Universo Galaxy</h2>
+            <p class="lead">
+              Disfruta de pantallas vibrantes, cámaras excepcionales y la
+              máxima potencia con nuestros dispositivos Samsung Galaxy.
+            </p>
+          </div>
+          <div class="bg-body-tertiary shadow-sm mx-auto rounded-top-3">
+            <img class="tamanodephone2 blockimg img-fluid rounded-top-2" src="img/samsung.jpg" alt>
+          </div>
+        </div>
+        <div class="bg-body-tertiary me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Galaxy</h2>
+            <p class="lead">
+              Pantallas Dynamic AMOLED, cámaras de 200 MP y la potencia que
+              necesitas para cualquier desafío.
+            </p>
+          </div>
+          <div class="shadow-sm mx-auto">
+            <img class="tamanodephone2 blockimg img-fluid" src="img/samsung-2.jpg" alt>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tercera fila de productos: Xiaomi -->
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 mt-4">
+        <div class="text-bg-dark me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Tecnología para Todos</h2>
+            <p class="lead">
+              Xiaomi combina innovación, diseño moderno y precios accesibles
+              en cada uno de sus smartphones. Perfecto para cualquier estilo
+              de vida.
+            </p>
+          </div>
+          <div class="bg-body-tertiary shadow-sm mx-auto rounded-top-3">
+            <img class="tamanodephone2 blockimg img-fluid rounded-top-2" src="img/xiaomi.jpg" alt>
+          </div>
+        </div>
+        <div class="bg-body-tertiary me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Xiaomi</h2>
+            <p class="lead">
+              Tecnología accesible con características premium como cámaras
+              increíbles y baterías duraderas.
+            </p>
+          </div>
+          <div class="shadow-sm mx-auto">
+            <img class="tamanodephone2 blockimg img-fluid" src="img/xiaomi-2.jpg" alt>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuarta fila de productos: Huawei -->
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 mt-4">
+        <div class="text-bg-dark me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Revoluciona la Fotografía Móvil</h2>
+            <p class="lead">
+              Captura momentos únicos con las cámaras de última generación de
+              Huawei, diseñadas para ofrecer resultados profesionales en tus
+              fotos y videos.
+            </p>
+          </div>
+          <div class="bg-body-tertiary shadow-sm mx-auto rounded-top-3">
+            <img class="tamanodephone2 blockimg img-fluid rounded-top-2" src="img/huawei.jpg" alt>
+          </div>
+        </div>
+        <div class="bg-body-tertiary me-lg-3 pt-3 px-3 pt-lg-5 px-lg-5 text-center overflow-hidden col-lg-6">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Huawei</h2>
+            <p class="lead">
+              Redefine la fotografía móvil con cámaras Leica y tecnología de
+              zoom avanzado.
+            </p>
+          </div>
+          <div class="shadow-sm mx-auto">
+            <img class="tamanodephone2 blockimg img-fluid" src="img/huawei-2.jpg" alt>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para el carrito de compras -->
+  <div class="modal fade" id="cartModal" aria-hidden="true" aria-labelledby="cartModalLabel" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+            <button class="btn-close" type="button" aria-label="Close" onclick="closeModal()"></button>
+          </div>
+          <div class="modal-body" id="cart-items">
+            <!-- Los productos del carrito aparecerán aquí -->
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button" onclick="finalizePurchase()">
+              Checkout
+            </button>
+            <button class="btn btn-secondary" type="button" onclick="closeModal()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12">
+        <img class="d-block mb-2" src="iconos/PJ_logo.svg" alt width="24" height="24">
+        <small class="d-block mb-3 text-body-secondary">Jose &copy; 2025. All rights reserved.</small>
+      </div>
+      <div class="col-6">
+        <h5>Apple</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone SE</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone 11</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone 12</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone 13</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone 14</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.1.html">iPhone 15 (Pro, Plus, Pro Max)</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Samsung</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.2.html">Galaxy S (S22, S23, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.2.html">Galaxy A (A14, A54, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.2.html">Galaxy Z (Z Fold, Z Flip)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.2.html">Galaxy M (M14, M33, etc.)</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Xiaomi</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.3.html">Xiaomi (12, 13, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.3.html">Redmi (Note 12, Note 13, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.3.html">Mi Mix (Mix Fold, Mix Alpha)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.3.html">Poco (Poco X5, Poco F5, etc.)</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Huawei</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.4.html">P Series (P50, P60, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.4.html">Mate Series (Mate 50, Mate 60, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.4.html">Nova Series (Nova 10, Nova 11, etc.)</a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none" href="pagecomplete5.4.html">Y Series</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sección: Botones de navegación -->
+  <div class="mb-5">
+    <div class="container d-flex justify-content-center mb-3 border-top">
+      <div class="mt-3 d-lg-flex">
+        <a class="btn btn-primary mb-3 d-flex justify-content-center mb-lg-0" href="pagecomplete4.0.html" role="button">Anterior sitio web completo</a>
+        <a class="btn btn-secondary d-flex justify-content-center ms-lg-3" href="pagehomeporfoliojose.html" role="button">Siguiente sitio web completo</a>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mb-4">
+      <div>
+        <a class="btn btn-primary" href="pagehomeporfoliojose.html#homepagecomple" role="button">Portfolio Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota informativa -->
+  <div class="container mb-5">
+    <div class="container bg-danger text-white p-4">
+      <div class="fw-bold border-bottom mb-3">Nota</div>
+        Es importante señalar que el botón «Siguiente sitio web completo»
+        aparece en gris para indicar que no hay un sitio posterior. Sin
+        embargo, sigue siendo funcional y, al hacer clic en él, se accederá a
+        la página de inicio del portafolio.
+    </div>
+  </div>
+
+  <!-- Script local -->
+  <script src="js/pagecomplete5.js"></script>
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>

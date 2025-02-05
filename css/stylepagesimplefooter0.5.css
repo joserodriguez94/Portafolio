@@ -1,0 +1,182 @@
+/* style.css */
+
+/* Reseteo de estilos básicos */
+* {
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en las dimensiones totales */
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+}
+
+/* Contenedor principal del pie de página */
+.footer-container {
+  background-color: #007bff; /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilos generales para el pie de página */
+.footer {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Contenido interno del pie de página */
+.footer-content {
+  display: flex; /* Flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  justify-content: space-around; /* Distribuye el espacio entre elementos */
+  padding: 10px; /* Espaciado interno */
+}
+
+/* Secciones individuales dentro del pie de página */
+.footer-section {
+  flex: 1 1 250px; /* Tamaño flexible con un mínimo de 250px */
+  margin: 20px; /* Espaciado externo entre secciones */
+}
+
+/* Estilos para el contenedor circular de íconos */
+.icon-circle {
+  width: 150px; /* Ancho del círculo */
+  height: 150px; /* Altura del círculo */
+  background-color: #fff; /* Fondo blanco */
+  border-radius: 50%; /* Bordes redondeados para formar un círculo */
+  display: flex; /* Flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin: 0 auto 20px; /* Centra horizontalmente y añade margen inferior */
+}
+
+/* Estilo del logo dentro del círculo */
+.logo-icon {
+  height: 70px; /* Altura fija del logo */
+}
+
+/* Descripción dentro del pie de página */
+.footer-description {
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Contenedor de íconos sociales */
+.social-icons {
+  display: flex; /* Flexbox para diseño flexible */
+  justify-content: center; /* Centra los íconos horizontalmente */
+  gap: 15px; /* Espaciado entre íconos */
+}
+
+/* Estilo general para los íconos */
+.icon {
+  width: 30px; /* Ancho fijo del ícono */
+}
+
+/* Títulos de las secciones */
+.section-title {
+  font-size: 1.2em; /* Tamaño de fuente */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Listas del pie de página */
+.footer-links,
+.footer-contact {
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin relleno interno */
+}
+
+/* Elementos de las listas */
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 10px; /* Espaciado inferior entre elementos */
+}
+
+/* Enlaces dentro de las listas */
+.footer-links a {
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  display: flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Contenedor de enlaces del pie de página */
+.footer-links {
+  display: flex; /* Flexbox para alineación horizontal */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Íconos de los enlaces y contactos */
+.link-icon,
+.contact-icon {
+  width: 20px; /* Ancho fijo de los íconos */
+  margin-right: 10px; /* Espaciado a la derecha del ícono */
+}
+
+/* Sección inferior del pie de página */
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 20px; /* Margen superior */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Estilo para la sección de contactos */
+.footer-contact {
+  text-align: start; /* Alinea el texto a la izquierda */
+  justify-content: center; /* Centrado horizontal */
+  display: flex; /* Flexbox para diseño flexible */
+}
+
+/* Contenedor para notas o mensajes */
+.container-note {
+  display: flex; /* Flexbox para diseño flexible */
+  justify-content: center; /* Centra horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 10px; /* Margen superior */
+}
+
+/* Caja de notas */
+.note-box {
+  background-color: #ff6347; /* Fondo rojo tomate */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px; /* Espaciado interno */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1000px; /* Ancho máximo */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Encabezado dentro de la caja de notas */
+.note-header {
+  font-weight: 700; /* Texto en negrita */
+  padding-bottom: 10px; /* Espaciado inferior */
+  border-bottom: 1px solid #dee2e6; /* Línea inferior */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Contenedor de navegación */
+.nav-container {
+  display: flex; /* Flexbox para diseño flexible */
+  justify-content: center; /* Centra horizontalmente */
+  padding: 8px; /* Espaciado interno */
+}
+
+/* Clase para centrar elementos */
+.align-center {
+  display: flex; /* Flexbox para diseño flexible */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+/* ---------- Media Queries ---------- */
+
+/* Estilos para pantallas pequeñas (hasta 1200px) */
+@media (max-width: 1200px) {
+  .footer-content {
+    flex-direction: column; /* Cambia el diseño a columnas */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .footer-section {
+    margin: 10px 0; /* Reduce el espaciado entre secciones */
+  }
+
+  .footer-contact {
+    text-align: start; /* Alinea el texto a la izquierda */
+  }
+}

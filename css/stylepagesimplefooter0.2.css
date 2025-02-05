@@ -1,0 +1,136 @@
+/* ---------- Estilos globales ---------- */
+/* Reinicia los márgenes, rellenos y configura el modelo de caja para todos los elementos */
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina relleno predeterminado */
+  box-sizing: border-box; /* Incluye bordes y rellenos en el cálculo de ancho/alto */
+}
+
+/* ---------- Contenedor principal ---------- */
+/* Define un contenedor responsivo y centrado */
+.container {
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  max-width: 1200px; /* Ancho máximo de 1200px */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* ---------- Pie de página ---------- */
+/* Estilo principal del pie de página */
+.footer {
+  display: flex; /* Diseño flexible */
+  flex-wrap: wrap; /* Permite ajuste en líneas múltiples */
+  gap: 2rem; /* Espaciado entre secciones */
+  padding: 2rem 0; /* Espaciado interno vertical */
+  border-top: 1px solid #ddd; /* Línea superior */
+}
+
+/* Sección individual dentro del footer */
+.footer-section {
+  flex: 1; /* Cada sección ocupa el mismo espacio */
+  min-width: 200px; /* Ancho mínimo para evitar que se reduzca demasiado */
+}
+
+/* ---------- Sección del logo ---------- */
+/* Diseño de la sección del logo */
+.logo-section {
+  display: flex; /* Diseño flexible */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  gap: 0.5rem; /* Espaciado entre elementos */
+}
+
+/* Títulos dentro de las secciones del footer */
+.footer-section h5 {
+  font-size: 1.2rem; /* Tamaño de fuente moderado */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  color: #212529; /* Color oscuro */
+}
+
+/* ---------- Listas dentro del footer ---------- */
+/* Listas sin viñetas */
+.footer-section ul {
+  list-style: none; /* Elimina viñetas */
+}
+
+/* Elementos individuales dentro de las listas */
+.footer-section ul li {
+  margin-bottom: 0.5rem; /* Espaciado inferior entre elementos */
+}
+
+/* Enlaces dentro de las listas */
+.footer-section ul li a {
+  color: #6c757d; /* Color gris claro */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 1rem; /* Tamaño de fuente moderado */
+}
+
+/* Efecto hover para los enlaces */
+.footer-section ul li a:hover {
+  color: #212529; /* Cambia a color oscuro */
+}
+
+/* ---------- Logo dentro del footer ---------- */
+/* Estilo para la imagen del logo */
+.logo-link img {
+  display: block; /* Evita espacio extra en imágenes */
+  width: 40px; /* Ancho fijo */
+  height: auto; /* Mantiene proporción de altura */
+}
+
+/* ---------- Navegación y botones ---------- */
+/* Contenedor para navegación */
+.nav-container {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+  padding: 8px; /* Espaciado interno */
+}
+
+/* Clase para centrar contenido */
+.align-center {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Estilo general para los botones */
+.button {
+  padding: 10px 20px; /* Espaciado interno */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  margin-right: 10px; /* Espaciado a la derecha */
+  display: inline-block; /* Botón como bloque en línea */
+  text-align: center; /* Texto centrado */
+}
+
+/* Botón principal con fondo azul */
+.primary-button {
+  background-color: #007bff; /* Azul primario */
+  color: white; /* Texto blanco */
+}
+
+/* Botón secundario con fondo gris */
+.secondary-button {
+  background-color: #6c757d; /* Gris */
+  color: white; /* Texto blanco */
+}
+
+/* Efecto hover para los botones */
+.button:hover {
+  opacity: 0.9; /* Reduce ligeramente la opacidad */
+}
+
+/* Botón deshabilitado */
+.disabled {
+  background-color: #6c757d; /* Gris */
+  color: white; /* Texto blanco */
+}
+
+/* ---------- Media Queries ---------- */
+
+
+/* Estilos para pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: flex-start; /* Alineación inicial */
+  }
+}

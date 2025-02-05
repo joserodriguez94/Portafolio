@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Enlaces a hojas de estilo -->
+  <link rel="stylesheet" href="css/styledepaginahome.css" />
+  <link rel="stylesheet" href="css/stylepagecomplete3.2.css" />
+
+  <!-- Título de la página -->
+  <title>Portfolio Jose</title>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <div class="">
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid mt-2 mb-2">
+        <a class="navbar-brand fw-bold" href="#">Portfolio José</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú desplegable -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <div class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a href="#" class="text-decoration-none">
+                <img class="" width="40px" src="iconos/PJ_logo.svg" alt="" />
+              </a>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="pagecomplete3.html">API 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="pagecomplete3.2.html">API 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pagecomplete3.3.html">API 3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Espacio para evitar que el contenido se solape con la barra de navegación -->
+  <br />
+  <br />
+
+  <!-- Sección principal de la página -->
+  <div class="">
+    <div class="hero-section container px-5">
+      <br />
+      <br />
+
+      <!-- Botón para abrir la documentación del API -->
+      <div class="justify-content-end d-flex mt-5">
+        <div class="justify-content-center d-flex">
+          <div>
+            <h5 class="text-center text-swhite">🙋‍♂️ API 🙋‍♀️</h5>
+            <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              View API documentation / Ver documentación del API
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla interactiva de usuarios -->
+      <div class="mt-5">
+        <h1>Interactive User Table</h1>
+        <div id="controls" class="d-sm-flex gap-2 mb-4">
+          <button id="fetchData" class="btn btn-primary">Fetch Data</button>
+          <button id="resetData" class="btn btn-secondary">Reset</button>
+          <div class="col-9 col-sm-5 col-md-4 col-xl-3 col-xxl-2">
+            <input type="text" id="searchBox" class="form-control mt-2 mt-sm-0" placeholder="Search by name, email..." />
+          </div>
+        </div>
+        <div id="results">Click the button to load data.</div>
+      </div>
+
+      <br /><br />
+    </div>
+
+    <!-- Modal para mostrar el perfil del usuario -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body">
+            <!-- Aquí se inyectarán los detalles del perfil -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de documentación del API -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- Encabezado del modal -->
+          <div class="modal-header bg-primary">
+            <h5 class="text-white px-3" id="exampleModalLabel">
+              API documentation / Documentación del API
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <div class="row">
+              <!-- Resumen general del API en español -->
+              <div class="">
+                <div class="container my-5">
+                  <div class="card shadow-lg">
+                    <div class="bg-primary text-white text-center">
+                      <h2>Resumen General del API</h2>
+                      <h5 class="fw-light text-white">
+                        <em> Versión español </em>
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <p class="lead">
+                        El script es una aplicación basada en JavaScript que sirve como interfaz interactiva para manejar y mostrar información de usuarios. Utiliza una API pública y combina datos reales con datos simulados para ofrecer funcionalidades avanzadas de visualización, filtrado y navegación. El propósito de este script es proporcionar una interfaz práctica para visualizar y gestionar datos de usuarios con herramientas modernas. Es útil para aplicaciones donde se necesite interactuar con grandes volúmenes de datos, ofreciendo una experiencia fluida y profesional.
+                      </p>
+                    </div>
+                    <div class="card-footer text-center">
+                      <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Resumen general del API en inglés -->
+                <div class="container my-5">
+                  <div class="card shadow-lg">
+                    <div class="bg-primary text-white text-center">
+                      <h2>API General Summary</h2>
+                      <h5 class="fw-light text-white">
+                        <em> English version </em>
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <p class="lead">
+                        The script is a JavaScript-based application that serves as an interactive interface for managing and displaying user information. It utilizes a public API and combines real data with simulated data to offer advanced features for visualization, filtering, and navigation. The purpose of this script is to provide a practical interface for viewing and managing user data using modern tools. It is useful for applications that require interaction with large volumes of data, delivering a smooth and professional experience.
+                      </p>
+                    </div>
+                    <div class="card-footer text-center">
+                      <small class="text-muted">Developed with ❤️ by Jose</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Explicación detallada del código JS en español -->
+              <div class="col-md-6 mt-5">
+                <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                  <em> Versión español</em>
+                </div>
+
+                <div class="mt-3">
+                  <div class="mb-4">
+                    <div class="card shadow-lg">
+                      <div class="bg-primary text-white text-center p-2">
+                        <h2>Cumplimiento de estándares de JavaScript (ECMAScript (ES) 6)</h2>
+                      </div>
+                      <div class="container" id="explanation">
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Uso de Constantes y Variables Let:</strong>
+                              El código utiliza <code>const</code> y <code>let</code> para declarar variables y constantes de manera apropiada, asegurando un ámbito seguro y evitando problemas con variables globales.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Funciones Flecha:</strong>
+                              Se implementan funciones flecha, como en la generación de datos ficticios y eventos, lo que reduce la verbosidad y asegura un manejo de contexto correcto.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Plantillas de Cadena:</strong>
+                              Uso extensivo de <code>template literals</code> para construir dinámicamente el contenido HTML y las cadenas de texto.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Selección y manipulación del DOM:</strong>
+                              Se seleccionan elementos del DOM con métodos estándar como <code>getElementById</code>, <code>querySelectorAll</code> y <code>innerHTML</code>.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Parámetros Rest y Spread:</strong>
+                              Se utilizan operadores <code>...</code> como en la combinación de datos para extender o clonar arreglos de forma eficiente.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Destructuración:</strong>
+                              Se aplica destructuración para manejar datos complejos, como al acceder a las propiedades de objetos anidados (ej. <code>user.address</code>, <code>user.company</code>).
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Modularidad:</strong>
+                              Aunque el código no está organizado en módulos de ES6 explícitos, sigue un diseño modular al separar funciones como <code>fetchData</code>, <code>displayTable</code>, y <code>showUserProfile</code>.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Manejo de Promesas:</strong>
+                              Uso correcto de <code>async/await</code> para manejar promesas en operaciones asíncronas como <code>fetch</code>, asegurando un flujo de trabajo más limpio.
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Métodos de Array Avanzados:</strong>
+                              Métodos como <code>Array.from</code>, <code>map</code> y <code>filter</code> se utilizan para manejar colecciones de datos eficientemente.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="">
+                    <div class="card shadow-lg">
+                      <div class="bg-primary text-white text-center p-2">
+                        <h2>Explicación detallada del código JS (API)</h2>
+                      </div>
+                      <div class="" id="explanation">
+                        <div class="">
+                          <div class="card shadow-lg">
+                            <div class="card-body">
+                              <h2 class="text-primary">1. Configuración Inicial</h2>
+
+                              <pre class="bg-light p-3 border rounded"><code>const API_URL = 'https://jsonplaceholder.typicode.com/users';</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Define la URL de la API. Esta URL será utilizada para obtener información de usuarios ficticios desde un servidor.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const ROWS_PER_PAGE = 10;</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Establece el número de filas que se mostrarán en cada página de la tabla, en este caso 10 filas por página.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>let currentPage = 1;</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Inicializa la variable `currentPage` en 1, indicando que la tabla comenzará mostrando la primera página.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>let usersData = [];</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Crea un arreglo vacío donde se almacenarán los datos de los usuarios obtenidos desde la API o generados localmente.
+                              </p>
+
+                              <h2 class="text-primary">2. Función para Obtener Datos (<code>fetchData()</code>)</h2>
+
+                              <pre class="bg-light p-3 border rounded"><code>async function fetchData() {</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Declara una función asíncrona que se encarga de obtener los datos desde la API y generar datos adicionales.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const resultsContainer = document.getElementById('results');</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Selecciona el elemento HTML con el id `results` y lo almacena en una variable. Este contenedor se usará para mostrar los datos.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>resultsContainer.innerHTML = '&lt;div class="spinner-border" role="status"&gt;&lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;&lt;/div&gt;';</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Muestra un spinner (animación de carga) dentro del contenedor de resultados mientras se obtienen los datos.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const response = await fetch(API_URL);</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Realiza una solicitud HTTP GET a la URL definida anteriormente (`API_URL`) y espera la respuesta.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>if (!response.ok) throw new Error('Error fetching data');</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Verifica si la solicitud fue exitosa (código de estado HTTP 200). Si no, lanza un error con un mensaje personalizado.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const data = await response.json();</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Convierte la respuesta de la API en un objeto JSON y lo almacena en la variable `data`.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>usersData = [...data, ...generateMockData(40)];</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Combina los datos obtenidos de la API con 40 datos ficticios generados por la función <code>generateMockData</code>.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>currentPage = 1;</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Reinicia la página actual a la primera página después de cargar los datos.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>displayTable();</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Llama a la función <code>displayTable()</code> para mostrar los datos en una tabla con paginación.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>} catch (error) { console.error('Error:', error); }</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Maneja cualquier error que ocurra durante la solicitud y lo registra en la consola del navegador.
+                              </p>
+
+                              <h2 class="text-primary">3. Generación de Datos Simulados (<code>generateMockData()</code>)</h2>
+
+                              <pre class="bg-light p-3 border rounded"><code>function generateMockData(count) { ... }</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Genera un arreglo de objetos que simulan usuarios con datos ficticios como nombre, email, dirección, etc.
+                              </p>
+
+                              <h2 class="text-primary">4. Mostrar Datos en la Tabla (<code>displayTable()</code>)</h2>
+
+                              <pre class="bg-light p-3 border rounded"><code>function displayTable() { ... }</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Genera dinámicamente una tabla HTML con los datos almacenados en <code>usersData</code>, mostrando solo las filas de la página actual.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const startRow = (currentPage - 1) * ROWS_PER_PAGE;</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Calcula el índice inicial de los datos que se mostrarán en la página actual.
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>const pageData = usersData.slice(startRow, endRow);</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Obtiene un subconjunto de datos para mostrar en la tabla según la página actual.
+                              </p>
+
+                              <h2 class="text-primary">5. Funciones de Navegación</h2>
+
+                              <pre class="bg-light p-3 border rounded"><code>document.getElementById('prevPage').addEventListener('click', ...);</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Navega a la página anterior cuando se hace clic en el botón "Previous".
+                              </p>
+
+                              <pre class="bg-light p-3 border rounded"><code>document.getElementById('nextPage').addEventListener('click', ...);</code></pre>
+                              <p>
+                                <strong>¿Qué hace?</strong> Navega a la página siguiente cuando se hace clic en el botón "Next".
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer text-center">
+                          <small class="text-muted">Desarrollado con ❤️ por Jose</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Explicación detallada del código JS en inglés -->
+              <div class="col-md-6 mt-5">
+                <div class="bg-secondary text-white text-center rounded-3 fs-5 p-1 fw-light">
+                  <em> English version</em>
+                </div>
+
+                <div class="mt-3">
+                  <div class="mb-4">
+                    <div class="card shadow-lg">
+                      <div class="bg-primary text-white text-center p-2">
+                        <h2>JavaScript (ECMAScript (ES) 6) standards compliance</h2>
+                      </div>
+                      <div class="container" id="explanation">
+                        <div class="mb-4">
+                          <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                <strong>Use of Constants and Let Variables:</strong>
+                                The code uses <code>const</code> and <code>let</code> to declare variables and constants appropriately, ensuring safe scoping and avoiding issues with global variables.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Arrow Functions:</strong>
+                                Arrow functions are implemented, such as in generating mock data and events, reducing verbosity and ensuring correct context handling.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Template Literals:</strong>
+                                Extensive use of <code>template literals</code> to dynamically construct HTML content and text strings.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>DOM Selection and Manipulation:</strong>
+                                DOM elements are selected using standard methods like <code>getElementById</code>, <code>querySelectorAll</code>, and content is updated with <code>innerHTML</code>.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Rest and Spread Parameters:</strong>
+                                <code>...</code> operators are used to efficiently extend or clone arrays, such as combining data.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Destructuring:</strong>
+                                Destructuring is applied to handle complex data structures, such as accessing nested object properties (e.g., <code>user.address</code>, <code>user.company</code>).
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Modularity:</strong>
+                                While the code is not explicitly organized into ES6 modules, it follows a modular design by separating functions like <code>fetchData</code>, <code>displayTable</code>, and <code>showUserProfile</code>.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Promise Handling:</strong>
+                                Correct use of <code>async/await</code> to handle promises in asynchronous operations like <code>fetch</code>, ensuring a cleaner workflow.
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Advanced Array Methods:</strong>
+                                Methods like <code>Array.from</code>, <code>map</code>, and <code>filter</code> are used to efficiently handle data collections.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="container">
+                    <div class="card shadow-lg">
+                      <div class="bg-primary text-white text-center p-2">
+                        <h2>Detailed explanation of the JS code (API)</h2>
+                      </div>
+                      <div class="container" id="explanation">
+                        <div class="card-body">
+                          <h2 class="text-primary">1. Initial Setup</h2>
+
+                          <pre class="bg-light p-3 border rounded"><code>const API_URL = 'https://jsonplaceholder.typicode.com/users';</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Defines the API URL from which user data will be fetched.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const ROWS_PER_PAGE = 10;</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Sets the number of rows (users) displayed per page in the table, in this case, 10 rows per page.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>let currentPage = 1;</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Initializes the `currentPage` variable to 1, indicating the table starts on the first page.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>let usersData = [];</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Creates an empty array where user data fetched from the API or generated locally will be stored.
+                          </p>
+
+                          <h2 class="text-primary">2. Fetching Data (<code>fetchData()</code>)</h2>
+
+                          <pre class="bg-light p-3 border rounded"><code>async function fetchData() {</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Declares an asynchronous function responsible for fetching data from the API and generating additional mock data.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const resultsContainer = document.getElementById('results');</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Selects the HTML element with the ID `results` and stores it in a variable. This container will display the fetched data.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>resultsContainer.innerHTML = '&lt;div class="spinner-border" role="status"&gt;&lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;&lt;/div&gt;';</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Displays a spinner (loading animation) in the results container while the data is being fetched.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const response = await fetch(API_URL);</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Makes an HTTP GET request to the API URL and waits for the response.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>if (!response.ok) throw new Error('Error fetching data');</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Checks if the request was successful (HTTP status code 200). If not, it throws an error with a custom message.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const data = await response.json();</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Converts the API response to JSON format and stores it in the `data` variable.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>usersData = [...data, ...generateMockData(40)];</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Combines the fetched data with 40 mock user records generated by the <code>generateMockData</code> function.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>currentPage = 1;</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Resets the current page to the first page after loading the data.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>displayTable();</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Calls the <code>displayTable()</code> function to display the data in a table with pagination.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>} catch (error) { console.error('Error:', error); }</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Handles any errors during the request and logs them in the browser console.
+                          </p>
+
+                          <h2 class="text-primary">3. Generating Mock Data (<code>generateMockData()</code>)</h2>
+
+                          <pre class="bg-light p-3 border rounded"><code>function generateMockData(count) { ... }</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Generates an array of objects simulating user records with mock data such as name, email, address, etc.
+                          </p>
+
+                          <h2 class="text-primary">4. Displaying Data in a Table (<code>displayTable()</code>)</h2>
+
+                          <pre class="bg-light p-3 border rounded"><code>function displayTable() { ... }</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Dynamically generates an HTML table with data stored in <code>usersData</code>, displaying only the rows for the current page.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const startRow = (currentPage - 1) * ROWS_PER_PAGE;</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Calculates the starting index of the data to be displayed for the current page.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>const pageData = usersData.slice(startRow, endRow);</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Extracts a subset of the data to display on the current page.
+                          </p>
+
+                          <h2 class="text-primary">5. Navigation Functions</h2>
+
+                          <pre class="bg-light p-3 border rounded"><code>document.getElementById('prevPage').addEventListener('click', ...);</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Navigates to the previous page when the "Previous" button is clicked.
+                          </p>
+
+                          <pre class="bg-light p-3 border rounded"><code>document.getElementById('nextPage').addEventListener('click', ...);</code></pre>
+                          <p>
+                            <strong>What it does:</strong> Navigates to the next page when the "Next" button is clicked.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="card-footer text-center">
+                        <small class="text-muted">Developed with ❤️ by Jose</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pie de página del modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="mb-5">
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fw-medium">
+        <p class="col-md-4 mb-0 text-body-secondary">
+          Jose &copy; 2025. All rights reserved.
+        </p>
+        <a href="#"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img width="40px" src="iconos/PJ_logo.svg" alt="" />
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a href="pagecomplete3.html" class="nav-link px-2 text-body-secondary">API 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.2.html" class="nav-link px-2 text-body-secondary">API 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="pagecomplete3.3.html" class="nav-link px-2 text-body-secondary">API 3</a>
+          </li>
+        </ul>
+      </footer>
+    </div>   
+  </div>
+
+  <!-- Sección: Botones de navegación -->
+  <div class=" container" >
+    <div class="container d-flex justify-content-center mb-3 border-top">
+      <div class="mt-3 d-lg-flex">
+        <a class="btn btn-secondary mb-3 d-flex justify-content-center mb-lg-0" href="pagehomeporfoliojose.html#homepagecomple"
+          role="button">Anterior sitio web completo</a>
+        <a class="btn btn-primary d-flex justify-content-center ms-lg-3" href="pagecomplete4.0.html"
+          role="button">Siguiente sitio web completo</a>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mb-4">
+      <div>
+        <a class="btn btn-primary" href="pagehomeporfoliojose.html#homepagecomple" role="button">Portfolio Home</a>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Nota informativa -->
+  <div class="container mb-5">
+    <div class="container bg-danger text-white p-4">
+      <div class="fw-bold border-bottom mb-3">Nota</div>
+
+      Es importante señalar que el botón «Anterior sitio web completo»
+      aparece en gris para indicar que no hay un sitio previo. Sin
+      embargo, sigue siendo funcional y, al hacer clic en él, se accederá
+      a la página de inicio del portafolio.
+    </div>
+  </div>
+
+<!-- Script Local -->
+<script src="js/pagecomplete3.2.js"></script>
+
+<!-- Script de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script de jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script de DataTables -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<!-- Script de DataTables Buttons -->
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+</body>
+
+</html>

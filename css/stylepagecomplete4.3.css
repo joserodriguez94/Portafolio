@@ -1,0 +1,187 @@
+/* Estilos para la sección hero (portada) */
+.hero-section {
+  background: linear-gradient(rgba(76, 76, 76, 0.6), rgba(76, 76, 76, 0.6)),
+    url(registrationform.webp); /* Fondo con gradiente e imagen */
+  background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+  background-position: center; /* Centrar la imagen */
+  min-height: 100vh; /* Altura mínima de la ventana */
+  color: white; /* Color del texto blanco */
+  position: relative; /* Posición relativa para contener elementos absolutos */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background: transparent; /* Fondo transparente */
+  position: absolute; /* Posición absoluta para superponer */
+  top: 0; /* Alineado arriba */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ancho completo */
+  padding: 1rem 2rem; /* Espaciado interno */
+  z-index: 10; /* Capa superior */
+}
+
+/* Estilos para la marca (logo) de la barra de navegación */
+.navbar .navbar-brand {
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.5rem; /* Tamaño de fuente grande */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.navbar .nav-link {
+  color: #fff; /* Color del texto blanco */
+  font-size: 1rem; /* Tamaño de fuente mediano */
+  margin-right: 1rem; /* Margen derecho */
+}
+
+/* Estilos para el botón de cita en la barra de navegación */
+.navbar .btn-appointment {
+  background-color: black; /* Fondo negro */
+  color: white; /* Color del texto blanco */
+  border-radius: 0; /* Sin bordes redondeados */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+}
+
+/* Estilos para el texto principal en la sección hero */
+.hero-text {
+  position: absolute; /* Posición absoluta para centrar */
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%); /* Ajuste fino para centrar */
+  text-align: center; /* Texto centrado */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilos para el título en el texto principal */
+.hero-text h1 {
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para la imagen de vista previa */
+.preview-img {
+  max-width: 100px; /* Ancho máximo */
+  max-height: 100px; /* Altura máxima */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  display: block; /* Mostrar como bloque */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilos para el diálogo del modal */
+.modal-dialog {
+  max-width: 90%; /* Ancho máximo del modal */
+}
+
+/* Estilos para las imágenes dentro del modal */
+.modal img {
+  max-width: 100%; /* Ancho máximo */
+  height: auto; /* Altura automática */
+  display: block; /* Mostrar como bloque */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilos para la barra de progreso */
+.progress {
+  height: 25px; /* Altura fija */
+}
+
+/* Estilos para la barra de progreso interna */
+.progress-bar {
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  display: flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  background-color: #007bff; /* Fondo azul */
+  transition: width 0.4s ease; /* Transición suave al cambiar de ancho */
+}
+
+/* Estilos para el texto del CAPTCHA */
+.captcha-text {
+  font-family: "Poppins", sans-serif; /* Fuente moderna */
+  font-size: 1.2rem; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  color: #7d7e7e; /* Color del texto gris oscuro */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 10px; /* Margen inferior */
+  position: relative; /* Posición relativa */
+}
+
+/* Estilos para el elemento decorativo después del texto */
+.text-tile::after {
+  content: ""; /* Contenido vacío */
+  display: block; /* Mostrar como bloque */
+  width: 50px; /* Ancho de la línea */
+  height: 3px; /* Grosor de la línea */
+  background: linear-gradient(90deg, #ff7f50, #1e90ff); /* Línea degradada */
+  margin-top: 5px; /* Espaciado entre el texto y la línea */
+  border-radius: 3px; /* Bordes redondeados */
+}
+
+/* Estilos para el texto del título */
+.text-tile {
+  color: black; /* Color del texto negro */
+}
+
+/* Estilos para el código CAPTCHA */
+.captcha-code {
+  font-size: 24px; /* Tamaño de fuente grande */
+  font-weight: bold; /* Texto en negrita */
+  letter-spacing: 3px; /* Espaciado entre letras */
+  background: linear-gradient(45deg, #3498db, #9b59b6, #e74c3c); /* Fondo degradado */
+  -webkit-text-fill-color: transparent; /* Texto transparente */
+  user-select: none; /* Evitar selección de texto */
+  margin: 15px 0; /* Margen superior e inferior */
+  background-clip: text; /* Recortar el fondo al texto */
+  -webkit-background-clip: text; /* Recortar el fondo al texto en WebKit */
+}
+
+/* Contenedor para el CAPTCHA */
+.captcha-container {
+  display: flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Espacio entre elementos */
+}
+
+/* Estilos para el tamaño del CAPTCHA */
+.sizecaptcha {
+  max-width: 300px; /* Ancho máximo */
+}
+
+/* Estilos para campos de entrada inválidos */
+.is-invalid {
+  border-color: #dc3545; /* Borde rojo */
+}
+
+/* Estilos para las tarjetas */
+.card {
+  border-radius: 12px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Estilos para botones personalizados */
+.button-custom {
+  background: #6c63ff; /* Fondo morado */
+  border: none; /* Sin borde */
+  transition: background 0.3s; /* Transición suave */
+  color: white; /* Color del texto blanco */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Efecto hover para botones personalizados */
+.button-custom:hover {
+  background: #3b3c98; /* Fondo morado oscuro */
+}
+
+/* Estilos para enlaces */
+a {
+  color: #6c63ff; /* Color morado */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos para el texto dentro de grupos de entrada */
+.input-group-text {
+  cursor: pointer; /* Cambia el cursor a pointer */
+}

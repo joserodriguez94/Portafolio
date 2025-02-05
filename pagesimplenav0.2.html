@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio José</title>
+
+  <!-- Enlaces a hojas de estilo -->
+  <link href="css/styledepaneldenavegacion0.2.css" rel="stylesheet">
+  <link href="css/styledebotonesdenavegacion.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Marca de la barra de navegación -->
+      <a class="navbar-brand" href="#">Portfolio José</a>
+
+      <!-- Botón para alternar el menú de navegación en pantallas pequeñas -->
+      <button class="navbar-toggler" id="navbar-toggle">☰</button>
+
+      <!-- Menú de navegación -->
+      <div class="navbar-menu" id="navbar-menu">
+        <ul class="navbar-nav">
+          <!-- Enlaces de navegación -->
+          <li><a class="nav-link" href="#">Home</a></li>
+          <li><a class="nav-link" href="#">Link</a></li>
+          <!-- Menú desplegable -->
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#">Dropdown ▼</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Sección de búsqueda -->
+        <div class="search">
+          <div>
+            <!-- Campo de entrada y botón de búsqueda -->
+            <input class="search-input" id="search-input" type="search" placeholder="Search...">
+            <button class="search-button" id="search-button">Search</button>
+          </div>
+
+          <div>
+            <!-- Contenedor para mostrar resultados de búsqueda -->
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaciadores -->
+  <br>
+  <br>
+
+  <!-- Sección: Botones de navegación -->
+  <div>
+    <div class="navegacion-botones">
+      <div>
+        <div class="display-flex-navegation">
+          <!-- Enlaces a otras versiones de la barra de navegación -->
+          <a class="boton boton-anterior" href="pagesimplenav0.1.html">Anterior barra de navegación</a>
+          <a class="boton boton-siguiente" href="pagesimplenav0.3.html">Siguiente barra de navegación</a>
+        </div>
+
+        <div class="display-flex-navegation">
+          <!-- Enlace al home del portafolio -->
+          <a class="boton boton-portfolio" href="pagehomeporfoliojose.html#homemenusimple">Portfolio Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para la funcionalidad del menú -->
+  <script src="js/scriptnavegacion0.2.js"></script>
+</body>
+</html>

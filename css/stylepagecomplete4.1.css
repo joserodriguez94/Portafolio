@@ -1,0 +1,89 @@
+/* Estilos para la capa de superposición semitransparente sobre las imágenes */
+.overlay {
+  position: absolute; /* Posición absoluta para superponer */
+  top: 0; /* Alineado arriba */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background: rgba(92, 92, 92, 0.8); /* Fondo gris con opacidad del 80% */
+  z-index: 1; /* Capa superior sobre las imágenes */
+}
+
+/* Estilos para los elementos del carrusel */
+.carousel-item {
+  position: relative; /* Posición relativa para contener elementos absolutos */
+}
+
+/* Estilos para los textos del carrusel, que deben estar por encima del fondo */
+.carousel-caption {
+  position: relative; /* Posición relativa para ajustar el z-index */
+  z-index: 2; /* Capa superior sobre la capa de superposición */
+  color: white; /* Color del texto blanco */
+}
+
+/* Fondo verde semitransparente con gradiente */
+.bg-green-tran {
+  background: linear-gradient(rgba(6, 89, 6, 0.8), rgba(6, 89, 6, 0.8)); /* Gradiente verde con opacidad */
+}
+
+/* Estilos para los elementos del carrusel, asegurando que ocupen toda la pantalla */
+.carousel-item {
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+/* Estilos para las imágenes dentro del carrusel */
+.carousel-item img {
+  height: 100%; /* Altura completa del contenedor */
+}
+
+/* Estilos para los textos del carrusel, posicionados en la parte inferior */
+.carousel-caption {
+  position: absolute; /* Posición absoluta para ubicar el texto */
+  bottom: 20%; /* Distancia desde la parte inferior */
+  background-color: rgba(18, 95, 10, 0.8); /* Fondo verde semitransparente */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 10%; /* Distancia desde la parte inferior reducida */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    padding: 10px; /* Espaciado interno reducido */
+  }
+}
+
+/* Estilos para íconos de expansión */
+.expand-icon {
+  cursor: pointer; /* Cambia el cursor a pointer */
+  font-size: 18px; /* Tamaño de fuente */
+  color: #007bff; /* Color azul */
+}
+
+/* Estilos para filas ocultas */
+.hidden-row {
+  display: none; /* Oculta la fila */
+}
+
+/* Estilos para texto truncado con puntos suspensivos */
+.truncated {
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el contenido que desborda */
+  text-overflow: ellipsis; /* Añade puntos suspensivos al texto truncado */
+  max-width: 200px; /* Ancho máximo del contenedor */
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  th,
+  td {
+    font-size: 12px; /* Tamaño de fuente reducido */
+    padding: 5px; /* Espaciado interno reducido */
+  }
+
+  .expand-icon {
+    font-size: 16px; /* Tamaño de fuente reducido para íconos */
+  }
+}

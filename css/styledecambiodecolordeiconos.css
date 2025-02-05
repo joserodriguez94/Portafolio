@@ -1,0 +1,19 @@
+/* Clase para iconos con color blanco */
+.icon-img-colorblanco {
+  /* Filtro para aplicar un color blanco al icono */
+  filter: brightness(0) saturate(100%) invert(100%) sepia(93%) saturate(26%)
+    hue-rotate(56deg) brightness(104%) contrast(100%);
+}
+
+/* Clase para definir el tamaño de los iconos */
+.tamanodeicono {
+  width: 24px; /* Ancho del icono */
+  height: 24px; /* Alto del icono */
+}
+
+/* Clase para iconos con color verde */
+.icon-img-colorgreend {
+  /* Filtro para aplicar un color verde al icono */
+  filter: brightness(0) saturate(100%) invert(67%) sepia(17%) saturate(1167%)
+    hue-rotate(83deg) brightness(88%) contrast(76%);
+}

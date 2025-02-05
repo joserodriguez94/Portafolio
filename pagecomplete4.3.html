@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  
+  <!-- Enlace a Google Fonts: Fuentes tipográficas modernas y legibles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Enlace a Font Awesome: Biblioteca de iconos vectoriales escalables -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Enlace a hojas de estilo personalizadas -->
+  <link href="css/stylepagecomplete4.3.css" rel="stylesheet">
+  <link href="css/styledepaginahome.css" rel="stylesheet">
+
+  <!-- Título de la página -->
+  <title>Portfolio Jose</title>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-xl navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Portfolio Jose</a>
+      <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav bg-secondary rounded-4 p-2 px-4">
+          <li class="nav-item">
+            <a class="nav-link" href="pagecomplete4.0.html" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagecomplete4.1.html">Page 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagecomplete4.2.html">Page 2</a>
+          </li>
+          <li class="nav-item nav-underline">
+            <a class="nav-link active" href="pagecomplete4.3.html">Page 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pagecomplete4.4.html">Page 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Hero -->
+  <div class="hero-section">
+    <div class="hero-text">
+      <h1>
+        <i> Registration Form </i>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Formulario de Registro -->
+  <div class="mt-5 mb-2">
+    <div class="container">
+      <div class="mt-2 bg-secondary-subtle p-3 p-sm-5 rounded-4">
+        <div class="text-center mb-4 fw-bold fs-1 text-primary">
+          Registration Form
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress mb-4 border border-primary">
+          <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" style="width: 0%">
+            0%
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="registration-form" novalidate>
+          <!-- Información Personal -->
+          <h4 class="mb-3 text-tile">Personal Information</h4>
+          <div class="mb-3">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-control" id="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="birthdate">Date of Birth</label>
+            <input class="form-control" id="birthdate" type="date" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="gender">Gender</label>
+            <select class="form-select" id="gender" required>
+              <option value disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Información de Contacto -->
+          <h4 class="mb-3 text-tile">Contact Information</h4>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" id="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-control" id="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="address">Address</label>
+            <textarea class="form-control" id="address" rows="2" autocomplete="street-address" required></textarea>
+          </div>
+
+          <!-- Información Académica -->
+          <h4 class="mb-3 text-tile">Academic Information</h4>
+          <div class="mb-3">
+            <label class="form-label" for="education-level">Education Level</label>
+            <select class="form-select" id="education-level" required>
+              <option value disabled selected>
+                Select your education level
+              </option>
+              <option value="high-school">High School</option>
+              <option value="bachelor">Bachelor's Degree</option>
+              <option value="master">Master's Degree</option>
+              <option value="doctorate">Doctorate</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="field-study">Field of Study</label>
+            <input class="form-control" id="field-study" type="text" required>
+          </div>
+
+          <!-- Experiencia Laboral -->
+          <h4 class="mb-3 text-tile">Work Experience</h4>
+          <div class="mb-3">
+            <label class="form-label" for="profession">Profession</label>
+            <input class="form-control" id="profession" type="text" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="experience-years">Years of Experience</label>
+            <input class="form-control" id="experience-years" type="number" min="0" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="company">Current Company</label>
+            <input class="form-control" id="company" type="text" autocomplete="organization">
+          </div>
+
+          <!-- Intereses -->
+          <h4 class="mb-3 text-tile">Interests</h4>
+          <div class="mb-3">
+            <fieldset>
+              <legend class="form-label">Select Your Interests</legend>
+              <div class="form-check">
+                <input class="form-check-input" id="interest-tech" type="checkbox" value="tech">
+                <label class="form-check-label" for="interest-tech">Technology</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="interest-music" type="checkbox" value="music">
+                <label class="form-check-label" for="interest-music">Music</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="interest-sports" type="checkbox" value="sports">
+                <label class="form-check-label" for="interest-sports">Sports</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Subida de archivos -->
+          <div>
+            <div class="mb-3">
+              <label class="btn btn-primary">
+                Upload Files
+                <input class="d-none" id="file-input" type="file" multiple accept="image/*,.pdf,.doc,.docx">
+              </label>
+            </div>
+
+            <div class="row" id="file-list"></div>
+
+            <!-- Modal para previsualización de imágenes -->
+            <div class="modal fade" id="imageModal" aria-hidden="true" aria-labelledby="imageModalLabel" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">
+                      Image Preview
+                    </h5>
+                    <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img id="modalImage" src alt="Preview">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CAPTCHA -->
+          <h4 class="mb-3 text-tile">Verification</h4>
+          <div class="mb-3 bg-body-secondary p-3 sizecaptcha d-flex justify-content-center">
+            <div>
+              <label class="form-label captcha-text" for="captchaInput">CAPTCHA Code</label>
+              <div class="captcha-container d-flex align-items-center">
+                <span class="captcha-code" id="captchaCode"></span>
+                <button class="btn btn-outline-secondary ms-2" id="refreshCaptcha" type="button">
+                  Refresh
+                </button>
+              </div>
+              <input class="form-control mt-2 w-auto" id="captchaInput" type="text" required>
+              <div class="mt-2" id="captchaMessage"></div>
+            </div>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary w-50" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cambio de Contraseña -->
+  <div class="mt-5 mb-2">
+    <div class="container">
+      <div class="bg-secondary-subtle p-3 p-sm-5 rounded-4 mt-4">
+        <div class="d-xl-flex">
+          <div class="col-12">
+            <div class="col-12 bloquedeperfil colordesubrayado fw-bold tamanodeletradeperfil">
+              <div class="mt-xl-4 fs-1 text-primary">Password Change</div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="mt-3">
+            <div class="d-flex flex-wrap">
+              <div class="d-flex t">Current Password</div>
+              <div class="ms-3">
+                <img class="imgcolormorado toggle-password" data-target="current-password" src="iconos/visibility-eye-morado.svg" alt role="button" width="25px">
+              </div>
+            </div>
+            <div class="col-11 border mt-2">
+              <input class="rounded-3 d-flex form-control" id="current-password" type="password" placeholder="Write" style="outline: none; border: none">
+            </div>
+          </div>
+
+          <!-- Nueva Contraseña -->
+          <div class="mt-3">
+            <div class="d-flex flex-wrap">
+              <div class="d-flex">New Password</div>
+              <div class="ms-3">
+                <img class="imgcolormorado toggle-password" data-target="new-password" src="iconos/visibility-eye-morado.svg" alt role="button" width="25px">
+              </div>
+            </div>
+            <div class="col-11 mt-2">
+              <input class="rounded-3 d-flex form-control" id="new-password" type="password" placeholder="Write" style="outline: none; border: none">
+            </div>
+          </div>
+
+          <!-- Confirmar Nueva Contraseña -->
+          <div class="mt-3">
+            <div class="d-flex flex-wrap">
+              <div class="d-flex">Confirm new password</div>
+              <div class="ms-3">
+                <img class="imgcolormorado toggle-password" data-target="confirm-password" src="iconos/visibility-eye-morado.svg" alt role="button" width="25px">
+              </div>
+            </div>
+            <div class="col-11 mt-2">
+              <input class="rounded-3 d-flex form-control" id="confirm-password" type="password" placeholder="Write" style="outline: none; border: none">
+            </div>
+          </div>
+
+          <!-- Botones de Confirmar y Cancelar -->
+          <div class="mt-4 mb-3">
+            <button class="border p-1 text-white rounded-4" id="submit-button" type="button" style="width: 180px; background: #007bff">
+              <b>Confirm change </b>
+            </button>
+            <button class="p-1 border-0 bg-danger text-white rounded-4 mt-2 mt-sm-0" id="cancel-button" type="button" style="width: 180px">
+              <b>Cancel</b>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="mb-5">
+    <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-5 my-5 border-top">
+        <div class="col mb-3">
+          <a class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" href="">
+            <img class src="iconos/logo-electron.svg" alt width="40px">
+          </a>
+          <p class="text-body-secondary">
+            Jose &copy; 2025. All rights reserved.
+          </p>
+        </div>
+        <div class="col mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a class="nav-link p-0 text-body-secondary" href="pagecomplete4.0.html">Home</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link p-0 text-body-secondary" href="pagecomplete4.1.html">Page 1</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link p-0 text-body-secondary" href="pagecomplete4.2.html">Page 2</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a class="nav-link p-0 text-body-secondary" href="pagecomplete4.3.html">Page 3</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link p-0 text-body-secondary" href="pagecomplete4.4.html">Page 4</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- Sección: Botones de navegación -->
+  <div>
+    <div class="container d-flex justify-content-center mb-3 border-top">
+      <div class="mt-3 d-lg-flex">
+        <a class="btn btn-primary mb-3 d-flex justify-content-center mb-lg-0" href="pagecomplete3.html" role="button">Anterior sitio web completo</a>
+        <a class="btn btn-primary d-flex justify-content-center ms-lg-3" href="pagecomplete5.0.html" role="button">Siguiente sitio web completo</a>
+      </div>
+      </div>
+    <div class="container d-flex justify-content-center mb-4">
+      <div>
+        <a class="btn btn-primary" href="pagehomeporfoliojose.html#homepagecomple" role="button">Portfolio Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script local -->
+  <script src="js/pagecomplete4.3.js"></script>
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

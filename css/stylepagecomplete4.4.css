@@ -1,0 +1,132 @@
+/* Estilos para el fondo y configuraciones generales */
+.bg-price {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo con gradiente morado a azul */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  max-width: 900px; /* Ancho máximo del contenedor */
+}
+
+/* Estilos para las tarjetas de precios */
+.card-price {
+  border: 2px solid #ffffff; /* Borde blanco */
+  border-radius: 9px; /* Bordes redondeados */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones suaves */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Efecto hover para las tarjetas de precios */
+.card-price:hover {
+  transform: scale(1.05); /* Escalar ligeramente la tarjeta */
+  box-shadow: 0 10px 20px rgba(255, 255, 255); /* Sombra blanca */
+}
+
+/* Estilos para la tarjeta activa */
+.card-price.active {
+  border: 1px solid #0056b3; /* Borde azul */
+  background-color: #daebf9; /* Fondo azul claro */
+  box-shadow: 0 0 10px rgb(255, 255, 255); /* Sombra blanca */
+  transform: scale(1.08); /* Escalar ligeramente la tarjeta */
+}
+
+/* Estilos para el login */
+/* Estilos personalizados con prefijo custom- */
+
+/* Fondo con gradiente para el cuerpo de la página de login */
+body.custom-background {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo con gradiente morado a azul */
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+/* Estilos para la tarjeta personalizada */
+.custom-card {
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+/* Efecto hover para la tarjeta personalizada */
+.custom-card:hover {
+  transform: translateY(-5px); /* Desplazar ligeramente hacia arriba */
+}
+
+/* Estilos para el botón primario personalizado */
+.custom-btn-primary {
+  background: #2575fc; /* Fondo azul */
+  border: none; /* Sin borde */
+  transition: background 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto hover para el botón primario personalizado */
+.custom-btn-primary:hover {
+  background: #6a11cb; /* Fondo morado */
+  transform: scale(1.05); /* Escalar ligeramente el botón */
+}
+
+/* Estilos para el texto dentro del grupo de entrada personalizado */
+.custom-input-group-text {
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Efecto hover para el texto dentro del grupo de entrada personalizado */
+.custom-input-group-text:hover {
+  color: #2575fc; /* Color azul */
+}
+
+/* Estilos para la advertencia de bloqueo de mayúsculas */
+.custom-caps-warning {
+  display: none; /* Ocultar por defecto */
+  color: red; /* Color rojo */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+/* Estilos para la barra de fortaleza de la contraseña */
+.custom-password-strength-bar {
+  width: 0%; /* Ancho inicial */
+  transition: width 0.3s; /* Transición suave */
+}
+
+/* Estilos para la barra de fortaleza de la contraseña en estado de peligro */
+.custom-password-strength-bar.bg-danger {
+  background-color: red; /* Fondo rojo */
+}
+
+/* Estilos para la barra de fortaleza de la contraseña en estado de advertencia */
+.custom-password-strength-bar.bg-warning {
+  background-color: yellow; /* Fondo amarillo */
+}
+
+/* Estilos para la barra de fortaleza de la contraseña en estado de éxito */
+.custom-password-strength-bar.bg-success {
+  background-color: green; /* Fondo verde */
+}
+
+/* Estilos para la tarjeta personalizada en pantallas pequeñas */
+.custom-card {
+  width: 100%; /* Ancho completo */
+}
+
+/* Estilos responsivos para pantallas con un ancho mínimo de 500px */
+@media (min-width: 500px) {
+  .custom-card {
+    width: 300px; /* Ancho fijo */
+  }
+}
+
+/* Estilos responsivos para pantallas con un ancho mínimo de 576px */
+@media (min-width: 576px) {
+  .custom-card {
+    max-width: 260px; /* Ancho máximo */
+  }
+}
+
+/* Estilos responsivos para pantallas con un ancho mínimo de 992px */
+@media (min-width: 992px) {
+  .custom-card {
+    max-width: 350px; /* Ancho máximo */
+  }
+}
